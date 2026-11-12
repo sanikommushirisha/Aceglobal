@@ -59,9 +59,9 @@ function Particles() {
     sprite.height = 64;
     const sctx = sprite.getContext("2d")!;
     const grad = sctx.createRadialGradient(32, 32, 0, 32, 32, 32);
-    grad.addColorStop(0, "rgba(25,107,250,0.95)");
-    grad.addColorStop(0.4, "rgba(25,107,250,0.5)");
-    grad.addColorStop(1, "rgba(25,107,250,0)");
+    grad.addColorStop(0, "rgba(5,150,105,0.95)");
+    grad.addColorStop(0.4, "rgba(5,150,105,0.5)");
+    grad.addColorStop(1, "rgba(5,150,105,0)");
     sctx.fillStyle = grad;
     sctx.fillRect(0, 0, 64, 64);
     const texture = new THREE.CanvasTexture(sprite);
@@ -162,17 +162,17 @@ export default function MinimalBackground() {
     <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
       {/* Slow drifting gradient blobs (Framer Motion) */}
       <motion.div
-        className="absolute -top-40 -left-24 w-[520px] h-[520px] rounded-full bg-[#0053ce]/10 blur-3xl"
+        className="absolute -top-40 -left-24 w-[520px] h-[520px] rounded-full bg-[#034f46]/10 blur-3xl"
         animate={reduced ? undefined : { x: [0, 50, 0], y: [0, 30, 0] }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute top-10 right-[-80px] w-[460px] h-[460px] rounded-full bg-[#94a6fe]/20 blur-3xl"
+        className="absolute top-10 right-[-80px] w-[460px] h-[460px] rounded-full bg-[#8fc7b8]/20 blur-3xl"
         animate={reduced ? undefined : { x: [0, -40, 0], y: [0, 45, 0] }}
         transition={{ duration: 26, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-[-120px] left-1/3 w-[400px] h-[400px] rounded-full bg-[#196bfa]/10 blur-3xl"
+        className="absolute bottom-[-120px] left-1/3 w-[400px] h-[400px] rounded-full bg-[#059669]/10 blur-3xl"
         animate={reduced ? undefined : { x: [0, 30, 0], y: [0, -35, 0] }}
         transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
       />

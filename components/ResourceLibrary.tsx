@@ -88,8 +88,8 @@ const resources: Resource[] = [
 ];
 
 const typeStyles: Record<Resource["type"], string> = {
-  Guide: "bg-[#0053ce]/10 text-[#0053ce]",
-  Article: "bg-[#94a6fe]/20 text-[#243889]",
+  Guide: "bg-[#034f46]/10 text-[#034f46]",
+  Article: "bg-[#8fc7b8]/20 text-[#023d35]",
   Template: "bg-[#D6F5E3] text-[#1A7A44]",
 };
 
@@ -109,8 +109,8 @@ export default function ResourceLibrary() {
             onClick={() => setActive(cat)}
             className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
               active === cat
-                ? "bg-[#0053ce] text-white shadow-lg shadow-[#0053ce]/20"
-                : "bg-white/50 backdrop-blur-md text-[#00174c] border border-white/60 hover:bg-white/70"
+                ? "bg-[#034f46] text-white shadow-lg shadow-[#034f46]/20"
+                : "bg-white/50 backdrop-blur-md text-[#1a1a1a] border border-white/60 hover:bg-white/70"
             }`}
           >
             {cat}
@@ -124,7 +124,7 @@ export default function ResourceLibrary() {
           <a
             key={r.title}
             href="#"
-            className="group bg-white/55 backdrop-blur-md rounded-3xl p-7 shadow-lg shadow-[#0053ce]/5 border border-white/60 flex flex-col hover:shadow-xl hover:-translate-y-1 transition-all"
+            className="group bg-white/55 backdrop-blur-md rounded-3xl p-7 shadow-lg shadow-[#034f46]/5 border border-white/60 flex flex-col hover:shadow-xl hover:-translate-y-1 transition-all"
           >
             <div className="flex items-center gap-3 mb-5">
               <span
@@ -132,15 +132,15 @@ export default function ResourceLibrary() {
               >
                 {r.type}
               </span>
-              <span className="text-xs text-[#727687]">{r.category}</span>
+              <span className="text-xs text-[#6b7280]">{r.category}</span>
             </div>
-            <h3 className="text-lg font-semibold text-[#00174c] mb-3 leading-snug group-hover:text-[#0053ce] transition-colors">
+            <h3 className="text-lg font-semibold text-[#1a1a1a] mb-3 leading-snug group-hover:text-[#034f46] transition-colors">
               {r.title}
             </h3>
-            <p className="text-sm text-[#727687] leading-relaxed flex-1">{r.excerpt}</p>
-            <div className="mt-6 flex items-center justify-between pt-4 border-t border-[#c2c6d8]/20">
-              <span className="text-xs text-[#727687]">{r.readTime}</span>
-              <span className="text-[#0053ce] text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            <p className="text-sm text-[#6b7280] leading-relaxed flex-1">{r.excerpt}</p>
+            <div className="mt-6 flex items-center justify-between pt-4 border-t border-[#e0e0e0]/20">
+              <span className="text-xs text-[#6b7280]">{r.readTime}</span>
+              <span className="text-[#034f46] text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                 Read
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path

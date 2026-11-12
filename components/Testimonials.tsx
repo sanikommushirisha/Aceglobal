@@ -8,21 +8,21 @@ const testimonials = [
     name: "Sarah Chen",
     role: "CEO, NovaSpark",
     initials: "SC",
-    color: "from-indigo-500 to-purple-600",
+    color: "from-emerald-500 to-teal-600",
   },
   {
     quote: "Our Delaware franchise tax and federal returns were filed perfectly and on time. The team is incredibly responsive and professional.",
     name: "Marcus Lee",
     role: "Founder, Stackr",
     initials: "ML",
-    color: "from-blue-500 to-cyan-500",
+    color: "from-emerald-500 to-cyan-500",
   },
   {
     quote: "Best decision we made for our startup finances. Clean books, no stress, and our investors love the monthly reports.",
     name: "Priya Sharma",
     role: "Co-founder, Loopify",
     initials: "PS",
-    color: "from-purple-500 to-pink-500",
+    color: "from-teal-500 to-pink-500",
   },
   {
     quote: "I onboarded in literally 12 minutes. The bookkeeping has been flawless since day one. Highly recommended for any founder.",
@@ -43,7 +43,7 @@ const testimonials = [
     name: "Tom Rivera",
     role: "Co-founder, Gridcraft",
     initials: "TR",
-    color: "from-indigo-400 to-blue-500",
+    color: "from-emerald-400 to-emerald-500",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function Testimonials() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <p className="text-indigo-400 text-sm font-medium uppercase tracking-widest mb-3">
+            <p className="text-emerald-400 text-sm font-medium uppercase tracking-widest mb-3">
               Testimonials
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-white">

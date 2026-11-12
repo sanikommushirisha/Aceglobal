@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md transition-shadow duration-300 ${
-        scrolled ? "shadow-[0px_4px_20px_rgba(15,38,120,0.08)] shadow-xl" : "shadow-[0px_4px_20px_rgba(15,38,120,0.08)]"
+        scrolled ? "shadow-[0px_4px_20px_rgba(2,61,53,0.08)] shadow-xl" : "shadow-[0px_4px_20px_rgba(2,61,53,0.08)]"
       }`}
     >
       <div className="relative flex justify-between items-center max-w-[1280px] mx-auto px-5 md:px-6 h-20">
@@ -31,7 +31,7 @@ export default function Navbar() {
             preload
             className="h-9 w-9"
           />
-          <span className="text-2xl font-semibold text-[#00174c]">
+          <span className="text-2xl font-semibold text-[#1a1a1a]">
             Ace Global
           </span>
         </Link>
@@ -40,35 +40,35 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
           {/* Platform dropdown */}
           <div className="relative group">
-            <button className="flex items-center gap-1 text-[#00174c] text-sm hover:text-[#0053ce] transition-colors duration-200 whitespace-nowrap py-2">
+            <button className="flex items-center gap-1 text-[#1a1a1a] text-sm hover:text-[#034f46] transition-colors duration-200 whitespace-nowrap py-2">
               Platform
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 hidden group-hover:block">
-              <div className="bg-[#f2f3ff] rounded-2xl shadow-[0px_12px_40px_rgba(15,38,120,0.14)] border border-[#c2c6d8]/30 p-6 w-[420px] space-y-5">
+              <div className="bg-[#eef3f1] rounded-2xl shadow-[0px_12px_40px_rgba(2,61,53,0.14)] border border-[#e0e0e0]/30 p-6 w-[420px] space-y-5">
                 <Link href="/bookkeeping" className="block group/item">
-                  <p className="text-base font-semibold text-[#00174c] group-hover/item:text-[#0053ce] transition-colors">
+                  <p className="text-base font-semibold text-[#1a1a1a] group-hover/item:text-[#034f46] transition-colors">
                     Bookkeeping
                   </p>
-                  <p className="text-sm text-[#727687] mt-0.5">
+                  <p className="text-sm text-[#6b7280] mt-0.5">
                     Get your books closed and your financials monthly, quarterly, or annually.
                   </p>
                 </Link>
                 <Link href="/corporate-taxes" className="block group/item">
-                  <p className="text-base font-semibold text-[#00174c] group-hover/item:text-[#0053ce] transition-colors">
+                  <p className="text-base font-semibold text-[#1a1a1a] group-hover/item:text-[#034f46] transition-colors">
                     Corporate Taxes
                   </p>
-                  <p className="text-sm text-[#727687] mt-0.5">
+                  <p className="text-sm text-[#6b7280] mt-0.5">
                     Get your Delaware Franchise Tax, Federal &amp; State Corporate Income Taxes filed.
                   </p>
                 </Link>
                 <Link href="/company-formation" className="block group/item">
-                  <p className="text-base font-semibold text-[#00174c] group-hover/item:text-[#0053ce] transition-colors">
+                  <p className="text-base font-semibold text-[#1a1a1a] group-hover/item:text-[#034f46] transition-colors">
                     Company Formation
                   </p>
-                  <p className="text-sm text-[#727687] mt-0.5">
+                  <p className="text-sm text-[#6b7280] mt-0.5">
                     Form your LLC or C-Corp with incorporation, EIN, registered agent &amp; compliance.
                   </p>
                 </Link>
@@ -84,7 +84,7 @@ export default function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-[#00174c] text-sm hover:text-[#0053ce] transition-colors duration-200 whitespace-nowrap"
+              className="text-[#1a1a1a] text-sm hover:text-[#034f46] transition-colors duration-200 whitespace-nowrap"
             >
               {item.label}
             </Link>
@@ -93,20 +93,20 @@ export default function Navbar() {
 
         {/* CTAs */}
         <div className="flex items-center gap-6">
-          <a href="https://app.aceglobal.ai/?mode=login" className="hidden md:block text-[#0053ce] text-sm font-medium hover:opacity-80 transition-opacity">
+          <a href="https://app.aceglobal.ai/?mode=login" className="hidden md:block text-[#034f46] text-sm font-medium hover:opacity-80 transition-opacity">
             Sign in
           </a>
           {/* Hidden on mobile — it crowded the logo, so it lives inside the menu
               instead, where it reads as the primary action. */}
           <a
             href="https://app.aceglobal.ai/"
-            className="hidden md:inline-block bg-[#0053ce] text-white px-6 py-3 rounded-full text-sm font-medium scale-95 active:scale-90 transition-transform shadow-lg shadow-[#0053ce]/20"
+            className="hidden md:inline-block bg-[#034f46] text-white px-6 py-3 rounded-full text-sm font-medium scale-95 active:scale-90 transition-transform shadow-lg shadow-[#034f46]/20"
           >
             Get started
           </a>
           {/* Mobile menu toggle */}
           <button
-            className="md:hidden text-[#00174c]"
+            className="md:hidden text-[#1a1a1a]"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -123,24 +123,24 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-[#c2c6d8]/30 px-5 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-white border-t border-[#e0e0e0]/30 px-5 py-4 flex flex-col gap-4">
           <Link
             href="/bookkeeping"
-            className="text-[#00174c] text-sm font-medium"
+            className="text-[#1a1a1a] text-sm font-medium"
             onClick={() => setMenuOpen(false)}
           >
             Bookkeeping
           </Link>
           <Link
             href="/corporate-taxes"
-            className="text-[#00174c] text-sm font-medium"
+            className="text-[#1a1a1a] text-sm font-medium"
             onClick={() => setMenuOpen(false)}
           >
             Corporate Taxes
           </Link>
           <Link
             href="/company-formation"
-            className="text-[#00174c] text-sm font-medium"
+            className="text-[#1a1a1a] text-sm font-medium"
             onClick={() => setMenuOpen(false)}
           >
             Company Formation
@@ -154,7 +154,7 @@ export default function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-[#00174c] text-sm font-medium"
+              className="text-[#1a1a1a] text-sm font-medium"
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
@@ -170,7 +170,7 @@ export default function Navbar() {
           <a
             href="https://app.aceglobal.ai/"
             onClick={() => setMenuOpen(false)}
-            className="w-full text-left bg-[#0053ce] text-white px-6 py-3.5 rounded-full text-sm font-medium active:scale-95 transition-transform shadow-lg shadow-[#0053ce]/20"
+            className="w-full text-left bg-[#034f46] text-white px-6 py-3.5 rounded-full text-sm font-medium active:scale-95 transition-transform shadow-lg shadow-[#034f46]/20"
           >
             Get started
           </a>

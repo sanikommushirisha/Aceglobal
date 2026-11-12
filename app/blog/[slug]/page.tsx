@@ -186,11 +186,11 @@ export default async function BlogPostPage({
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative pt-32 md:pt-40 pb-8 md:pb-12 overflow-hidden bg-gradient-to-b from-[#e3e7ff] via-[#f2f3ff] to-white">
+        <section className="relative pt-32 md:pt-40 pb-8 md:pb-12 overflow-hidden bg-gradient-to-b from-[#e0e8e5] via-[#eef3f1] to-white">
           <div className="relative z-10 max-w-[820px] mx-auto px-5 md:px-6 text-center">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0053ce] hover:opacity-80 mb-6"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-[#034f46] hover:opacity-80 mb-6"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -202,17 +202,17 @@ export default async function BlogPostPage({
                 {post.categories.map((c) => (
                   <span
                     key={c.slug}
-                    className="text-xs font-medium bg-[#0053ce]/10 text-[#0053ce] px-3 py-1 rounded-full"
+                    className="text-xs font-medium bg-[#034f46]/10 text-[#034f46] px-3 py-1 rounded-full"
                   >
                     {c.title}
                   </span>
                 ))}
               </div>
             ) : null}
-            <h1 className="text-[30px] sm:text-[38px] md:text-[52px] font-medium leading-[1.14] tracking-[-0.02em] text-[#00174c] mb-6">
+            <h1 className="text-[30px] sm:text-[38px] md:text-[52px] font-medium leading-[1.14] tracking-[-0.02em] text-[#1a1a1a] mb-6">
               {post.title}
             </h1>
-            <div className="flex items-center justify-center gap-3 text-sm text-[#727687]">
+            <div className="flex items-center justify-center gap-3 text-sm text-[#6b7280]">
               {authorImg ? (
                 <Image
                   src={authorImg}
@@ -224,7 +224,7 @@ export default async function BlogPostPage({
               ) : null}
               <div className="text-left">
                 {post.author?.name ? (
-                  <p className="text-[#00174c] font-medium">{post.author.name}</p>
+                  <p className="text-[#1a1a1a] font-medium">{post.author.name}</p>
                 ) : null}
                 <p>
                   <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
@@ -237,15 +237,17 @@ export default async function BlogPostPage({
         {/* Cover image */}
         {cover ? (
           <div className="max-w-[960px] mx-auto px-5 md:px-6 -mt-2 mb-10 md:mb-14">
-            <Image
-              src={cover}
-              alt={post.coverImage?.alt || post.title}
-              width={1600}
-              height={840}
-              preload
-              sizes="(max-width: 960px) 100vw, 960px"
-              className="w-full h-auto rounded-[28px] border border-[#c2c6d8]/20 shadow-lg"
-            />
+            <div className="rounded-[28px] overflow-hidden border border-[#e0e0e0]/20 shadow-lg">
+              <Image
+                src={cover}
+                alt={post.coverImage?.alt || post.title}
+                width={1600}
+                height={840}
+                preload
+                sizes="(max-width: 960px) 100vw, 960px"
+                className="block w-full h-auto"
+              />
+            </div>
           </div>
         ) : null}
 

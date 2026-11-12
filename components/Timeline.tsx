@@ -17,7 +17,7 @@ const press = [
 type PressMarkType = (typeof press)[number]["mark"];
 
 function PressMark({ type }: { type: PressMarkType }) {
-  const common = "w-5 h-5 text-[#00174c]";
+  const common = "w-5 h-5 text-[#1a1a1a]";
   switch (type) {
     case "circle":
       return (
@@ -74,21 +74,21 @@ function OnboardingVisual() {
     { name: "Mercury Bank", status: "Connected", color: "bg-green-100 text-green-700" },
     { name: "Brex", status: "Connected", color: "bg-green-100 text-green-700" },
     { name: "QuickBooks", status: "Connected", color: "bg-green-100 text-green-700" },
-    { name: "Stripe", status: "Syncing…", color: "bg-blue-100 text-blue-700" },
+    { name: "Stripe", status: "Syncing…", color: "bg-emerald-100 text-emerald-700" },
   ];
   return (
     <div className="bg-white rounded-2xl shadow-xl border border-white/50 p-6 w-full">
-      <p className="text-sm font-medium text-[#00174c] mb-4">Connect your accounts</p>
+      <p className="text-sm font-medium text-[#1a1a1a] mb-4">Connect your accounts</p>
       {rows.map((item) => (
         <div
           key={item.name}
-          className="flex justify-between items-center py-3 border-b border-[#c2c6d8]/20 last:border-0"
+          className="flex justify-between items-center py-3 border-b border-[#e0e0e0]/20 last:border-0"
         >
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#f2f3ff] border border-[#c2c6d8]/30 flex items-center justify-center text-xs font-semibold text-[#0053ce]">
+            <div className="w-8 h-8 rounded-lg bg-[#eef3f1] border border-[#e0e0e0]/30 flex items-center justify-center text-xs font-semibold text-[#034f46]">
               {item.name[0]}
             </div>
-            <span className="text-sm font-medium text-[#00174c]">{item.name}</span>
+            <span className="text-sm font-medium text-[#1a1a1a]">{item.name}</span>
           </div>
           <span className={`text-xs px-3 py-1 rounded-full font-medium ${item.color}`}>
             {item.status}
@@ -103,7 +103,7 @@ function AutopilotVisual() {
   return (
     <div className="bg-white rounded-2xl shadow-xl border border-white/50 p-6 w-full">
       <div className="flex justify-between items-center mb-5">
-        <p className="text-sm font-medium text-[#00174c]">This month — Autopilot</p>
+        <p className="text-sm font-medium text-[#1a1a1a]">This month — Autopilot</p>
         <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium">
           Running
         </span>
@@ -117,12 +117,12 @@ function AutopilotVisual() {
         <div key={t.task} className="flex items-center gap-3 py-2.5">
           <div
             className={`w-5 h-5 rounded-full flex items-center justify-center text-[11px] ${
-              t.done ? "bg-green-100 text-green-600" : "bg-[#f2f3ff] text-[#c2c6d8] border border-[#c2c6d8]/40"
+              t.done ? "bg-green-100 text-green-600" : "bg-[#eef3f1] text-[#e0e0e0] border border-[#e0e0e0]/40"
             }`}
           >
             {t.done ? "✓" : ""}
           </div>
-          <span className={`text-sm ${t.done ? "text-[#00174c]" : "text-[#727687]"}`}>{t.task}</span>
+          <span className={`text-sm ${t.done ? "text-[#1a1a1a]" : "text-[#6b7280]"}`}>{t.task}</span>
         </div>
       ))}
     </div>
@@ -137,8 +137,8 @@ function FreedomVisual() {
           ✓
         </div>
         <div>
-          <p className="text-xs text-[#727687]">Status</p>
-          <p className="text-sm font-medium text-[#00174c]">Everything handled</p>
+          <p className="text-xs text-[#6b7280]">Status</p>
+          <p className="text-sm font-medium text-[#1a1a1a]">Everything handled</p>
         </div>
       </div>
       {[
@@ -148,10 +148,10 @@ function FreedomVisual() {
       ].map((note) => (
         <div
           key={note}
-          className="flex items-center gap-3 py-2.5 border-b border-[#c2c6d8]/20 last:border-0"
+          className="flex items-center gap-3 py-2.5 border-b border-[#e0e0e0]/20 last:border-0"
         >
-          <span className="w-2 h-2 rounded-full bg-[#0053ce]" />
-          <span className="text-sm text-[#00174c]">{note}</span>
+          <span className="w-2 h-2 rounded-full bg-[#034f46]" />
+          <span className="text-sm text-[#1a1a1a]">{note}</span>
         </div>
       ))}
     </div>
@@ -164,11 +164,11 @@ const steps: Step[] = [
     title: "Seamless Onboarding",
     desc: "Connect your bank accounts and accounting software in minutes. We'll handle the historical cleanup so you start with a clean slate.",
     bullets: ["Connect in under 15 minutes", "Automatic historical cleanup", "No spreadsheets required"],
-    cardClass: "bg-[#ebedff]",
-    titleClass: "text-[#00174c]",
-    descClass: "text-[#424655]",
-    badgeClass: "bg-[#0053ce] text-white",
-    bulletClass: "text-[#00174c]",
+    cardClass: "bg-[#e8f5f3]",
+    titleClass: "text-[#1a1a1a]",
+    descClass: "text-[#374151]",
+    badgeClass: "bg-[#034f46] text-white",
+    bulletClass: "text-[#1a1a1a]",
     visual: <OnboardingVisual />,
   },
   {
@@ -176,10 +176,10 @@ const steps: Step[] = [
     title: "Switch to Autopilot",
     desc: "Your CPA team manages your books and filings. Your AI agent explains your numbers in real time, so you can ask, learn, and stay in control without doing the work.",
     bullets: ["Dedicated CPA team", "Monthly books & filings", "Ask your AI agent"],
-    cardClass: "bg-[#0053ce]",
+    cardClass: "bg-[#034f46]",
     titleClass: "text-white",
     descClass: "text-white/80",
-    badgeClass: "bg-white text-[#0053ce]",
+    badgeClass: "bg-white text-[#034f46]",
     bulletClass: "text-white",
     visual: <AutopilotVisual />,
   },
@@ -188,11 +188,11 @@ const steps: Step[] = [
     title: "Back to Building",
     desc: "Focus on your product, customers, and growth. Your CPA team and AI agent handle the finance workflow in the background and notify you the moment your books are closed or taxes are filed.",
     bullets: ["Zero day-to-day finance work", "Proactive alerts from your AI agent", "More time to build"],
-    cardClass: "bg-[#172d65]",
+    cardClass: "bg-[#023d35]",
     titleClass: "text-white",
-    descClass: "text-[#dbe1ff]/80",
-    badgeClass: "bg-[#196bfa] text-white",
-    bulletClass: "text-[#dbe1ff]",
+    descClass: "text-[#e0e8e5]/80",
+    badgeClass: "bg-[#059669] text-white",
+    bulletClass: "text-[#e0e8e5]",
     visual: <FreedomVisual />,
   },
 ];
@@ -216,7 +216,7 @@ function StepCard({
     <div className="sticky top-24 flex justify-center">
       <motion.div
         style={{ scale, top: `${i * 22}px` }}
-        className={`relative w-full ${step.cardClass} rounded-[28px] p-6 md:p-10 shadow-[0_16px_48px_rgba(15,38,120,0.14)] origin-top`}
+        className={`relative w-full ${step.cardClass} rounded-[28px] p-6 md:p-10 shadow-[0_16px_48px_rgba(2,61,53,0.14)] origin-top`}
       >
         <div className="flex flex-col md:flex-row items-center gap-8">
           {/* Text */}
@@ -264,7 +264,7 @@ export default function Timeline() {
       <div className="max-w-[1280px] mx-auto px-5 md:px-6">
         {/* Press logos — running marquee */}
         <div className="flex items-center gap-8 mb-20">
-          <span className="text-sm font-medium text-[#00174c] opacity-40 flex-shrink-0">
+          <span className="text-sm font-medium text-[#1a1a1a] opacity-40 flex-shrink-0">
             Featured on:
           </span>
           <div className="group relative flex-1 overflow-hidden">
@@ -280,7 +280,7 @@ export default function Timeline() {
                   className="flex items-center gap-2.5 whitespace-nowrap"
                 >
                   <PressMark type={p.mark} />
-                  <span className="text-xl font-semibold text-[#00174c] tracking-tight">
+                  <span className="text-xl font-semibold text-[#1a1a1a] tracking-tight">
                     {p.name}
                   </span>
                 </div>
@@ -291,10 +291,10 @@ export default function Timeline() {
 
         {/* Heading */}
         <div className="text-center mb-16">
-          <p className="text-[#0053ce] text-sm font-medium uppercase tracking-widest mb-3">
+          <p className="text-[#034f46] text-sm font-medium uppercase tracking-widest mb-3">
             How it works
           </p>
-          <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#00174c]">
+          <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#1a1a1a]">
             Three steps to financial autopilot
           </h2>
         </div>

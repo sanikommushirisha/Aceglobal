@@ -5,23 +5,23 @@ import RotatingWord from "./RotatingWord";
 
 export default function BentoGrid() {
   return (
-    <section className="py-16 md:py-[120px] bg-[#f2f3ff]">
+    <section className="py-16 md:py-[120px] bg-[#eef3f1]">
       <div className="max-w-[1280px] mx-auto px-5 md:px-6">
-        <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] tracking-[-0.01em] text-[#00174c] text-center mb-12">
+        <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] tracking-[-0.01em] text-[#1a1a1a] text-center mb-12">
           All-in-one accounting platform <br />
           built for{" "}
           <RotatingWord
             words={["startups", "small businesses", "CPA firms", "agencies", "founders"]}
-            className="text-[#0053ce]"
+            className="text-[#034f46]"
           />
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:h-[620px]">
           {/* Expert Accountants */}
-          <div className="md:col-span-7 bg-white p-8 rounded-3xl shadow-sm border border-[#c2c6d8]/20 flex flex-col justify-between overflow-hidden group">
+          <div className="md:col-span-7 bg-white p-8 rounded-3xl shadow-sm border border-[#e0e0e0]/20 flex flex-col justify-between overflow-hidden group">
             <div>
-              <h3 className="text-2xl font-medium text-[#00174c] mb-2">Expert Accountants</h3>
-              <p className="text-[#727687]">
+              <h3 className="text-2xl font-medium text-[#1a1a1a] mb-2">Expert Accountants</h3>
+              <p className="text-[#6b7280]">
                 Dedicated CPAs who understand startup nuances — from Delaware C-Corp compliance to complex multi-state filings.
               </p>
             </div>
@@ -37,17 +37,17 @@ export default function BentoGrid() {
                   alt={p.name}
                   width={64}
                   height={64}
-                  className="w-16 h-16 rounded-full object-cover border-4 border-[#ebedff]"
+                  className="w-16 h-16 rounded-full object-cover border-4 border-[#e8f5f3]"
                 />
               ))}
-              <div className="w-16 h-16 rounded-full bg-[#0053ce]/10 flex items-center justify-center text-[#0053ce] font-semibold text-sm">
+              <div className="w-16 h-16 rounded-full bg-[#034f46]/10 flex items-center justify-center text-[#034f46] font-semibold text-sm">
                 +12
               </div>
             </div>
           </div>
 
           {/* $1M+ Saved */}
-          <div className="md:col-span-5 bg-[#0053ce] p-8 rounded-3xl shadow-lg flex flex-col justify-between text-white relative overflow-hidden">
+          <div className="md:col-span-5 bg-[#034f46] p-8 rounded-3xl shadow-lg flex flex-col justify-between text-white relative overflow-hidden">
             <div className="relative z-10">
               <h3 className="text-2xl font-medium mb-2">$1M+ Saved</h3>
               <p className="opacity-80">
@@ -68,21 +68,21 @@ export default function BentoGrid() {
           </div>
 
           {/* Bookkeeping on Autopilot — full width row since no Tax Credits */}
-          <div className="md:col-span-12 bg-[#172d65] text-white p-8 rounded-3xl shadow-sm flex flex-col md:flex-row items-center gap-8 group">
+          <div className="md:col-span-12 bg-[#023d35] text-white p-8 rounded-3xl shadow-sm flex flex-col md:flex-row items-center gap-8 group">
             <div className="flex-1">
               <h3 className="text-2xl font-medium mb-2">Bookkeeping on Autopilot</h3>
-              <p className="text-[#dbe1ff]/60">
+              <p className="text-[#e0e8e5]/60">
                 Real-time sync across bank accounts, Stripe, and business systems — giving your AI
                 finance agents live context to monitor cash flow, detect exceptions, and prevent
                 month-end surprises.
               </p>
-              <button className="mt-6 flex items-center gap-2 text-[#b2c5ff] hover:gap-4 transition-all font-medium text-sm">
+              <button className="mt-6 flex items-center gap-2 text-[#a7d7c9] hover:gap-4 transition-all font-medium text-sm">
                 Learn how →
               </button>
             </div>
             {/* Transaction list mockup */}
             <div className="w-full md:w-80 bg-white/10 rounded-2xl p-5 group-hover:scale-[1.02] transition-transform">
-              <p className="text-xs font-medium text-[#b2c5ff] mb-3 uppercase tracking-wider">Recent Transactions</p>
+              <p className="text-xs font-medium text-[#a7d7c9] mb-3 uppercase tracking-wider">Recent Transactions</p>
               {[
                 { name: "Stripe payout", amount: "+$12,400", badge: "Reconciled" },
                 { name: "Brex card — AWS", amount: "-$890", badge: "Reconciled" },

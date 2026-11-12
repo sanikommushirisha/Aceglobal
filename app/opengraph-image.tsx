@@ -28,8 +28,8 @@ export default async function Image() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 80px",
-          background: "linear-gradient(135deg, #f2f3ff 0%, #ffffff 55%, #e3e7ff 100%)",
-          color: "#00174c",
+          background: "linear-gradient(135deg, #eef3f1 0%, #ffffff 55%, #e0e8e5 100%)",
+          color: "#1a1a1a",
           fontFamily: "sans-serif",
         }}
       >
@@ -53,7 +53,7 @@ export default async function Image() {
           >
             Your small business books & taxes, completely off your plate.
           </div>
-          <div style={{ fontSize: 30, color: "#0053ce", fontWeight: 500 }}>
+          <div style={{ fontSize: 30, color: "#034f46", fontWeight: 500 }}>
             Bookkeeping · Corporate taxes · Payroll · Compliance
           </div>
         </div>
@@ -63,7 +63,7 @@ export default async function Image() {
             display: "flex",
             justifyContent: "space-between",
             fontSize: 26,
-            color: "#727687",
+            color: "#6b7280",
           }}
         >
           <span>Expert CPAs + software, in one platform</span>

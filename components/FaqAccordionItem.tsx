@@ -18,7 +18,7 @@ export default function FaqAccordionItem({
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <div className="border-b border-[#c2c6d8]/30">
+    <div className="border-b border-[#e0e0e0]/30">
       <h3 className="m-0">
         <button
           type="button"
@@ -26,11 +26,11 @@ export default function FaqAccordionItem({
           aria-expanded={open}
           className="group flex w-full items-start justify-between gap-4 py-5 text-left"
         >
-          <span className="text-lg md:text-xl font-medium text-[#00174c] leading-snug group-hover:text-[#0053ce] transition-colors">
+          <span className="text-lg md:text-xl font-medium text-[#1a1a1a] leading-snug group-hover:text-[#034f46] transition-colors">
             {question}
           </span>
           <span
-            className={`mt-1 shrink-0 text-[#727687] transition-transform duration-200 ${
+            className={`mt-1 shrink-0 text-[#6b7280] transition-transform duration-200 ${
               open ? "rotate-180" : ""
             }`}
             aria-hidden="true"

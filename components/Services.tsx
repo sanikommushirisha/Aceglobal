@@ -10,7 +10,7 @@ const services = [
   },
   {
     tag: "Corporate Tax",
-    tagStyle: "bg-[#0053ce]/10 text-[#0053ce]",
+    tagStyle: "bg-[#034f46]/10 text-[#034f46]",
     title: "Federal and state taxes handled end to end.",
     desc: "From Delaware Franchise Tax to complex multi-state filings, your CPA team and AI agent keep your company compliant, track deadlines, and surface what needs attention — without you chasing forms or notices.",
     reverse: true,
@@ -21,9 +21,9 @@ const services = [
 
 function BookkeepingMockup() {
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-6 border border-[#c2c6d8]/20">
+    <div className="bg-white rounded-2xl shadow-lg p-6 border border-[#e0e0e0]/20">
       <div className="flex items-center justify-between mb-6">
-        <p className="text-sm font-medium text-[#00174c]">Burn Rate — Last 6 Months</p>
+        <p className="text-sm font-medium text-[#1a1a1a]">Burn Rate — Last 6 Months</p>
         <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium">On Track</span>
       </div>
       <div className="flex items-end gap-2 h-28 mb-6">
@@ -37,10 +37,10 @@ function BookkeepingMockup() {
         ].map((b, i) => (
           <div key={i} className="flex-1 flex flex-col justify-end gap-1 h-full">
             <div
-              className="w-full rounded-t-sm bg-[#0053ce]/20"
+              className="w-full rounded-t-sm bg-[#034f46]/20"
               style={{ height: `${b.total}%` }}
             >
-              <div className="w-full rounded-t-sm bg-[#0053ce]" style={{ height: `${(b.used / b.total) * 100}%` }} />
+              <div className="w-full rounded-t-sm bg-[#034f46]" style={{ height: `${(b.used / b.total) * 100}%` }} />
             </div>
           </div>
         ))}
@@ -50,9 +50,9 @@ function BookkeepingMockup() {
           { label: "Monthly Burn", value: "$24,500" },
           { label: "Runway", value: "18 months" },
         ].map((stat) => (
-          <div key={stat.label} className="bg-[#f2f3ff] rounded-xl p-3">
-            <p className="text-xs text-[#727687]">{stat.label}</p>
-            <p className="text-base font-semibold text-[#00174c]">{stat.value}</p>
+          <div key={stat.label} className="bg-[#eef3f1] rounded-xl p-3">
+            <p className="text-xs text-[#6b7280]">{stat.label}</p>
+            <p className="text-base font-semibold text-[#1a1a1a]">{stat.value}</p>
           </div>
         ))}
       </div>
@@ -62,10 +62,10 @@ function BookkeepingMockup() {
 
 function TaxMockup() {
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-6 border border-[#c2c6d8]/20">
+    <div className="bg-white rounded-2xl shadow-lg p-6 border border-[#e0e0e0]/20">
       <div className="flex items-center justify-between mb-6">
-        <p className="text-sm font-medium text-[#00174c]">Tax Filing Status</p>
-        <span className="text-xs bg-blue-100 text-[#0053ce] px-2 py-1 rounded-full font-medium">All Filed ✓</span>
+        <p className="text-sm font-medium text-[#1a1a1a]">Tax Filing Status</p>
+        <span className="text-xs bg-emerald-100 text-[#034f46] px-2 py-1 rounded-full font-medium">All Filed ✓</span>
       </div>
       {[
         { label: "Delaware Franchise Tax", date: "Mar 1", status: "Filed", ok: true },
@@ -74,10 +74,10 @@ function TaxMockup() {
         { label: "NY State Corp. Tax", date: "Apr 15", status: "Filed", ok: true },
         { label: "Q3 Estimated Tax", date: "Sep 15", status: "Upcoming", ok: false },
       ].map((row) => (
-        <div key={row.label} className="flex justify-between items-center py-3 border-b border-[#c2c6d8]/20 last:border-0">
+        <div key={row.label} className="flex justify-between items-center py-3 border-b border-[#e0e0e0]/20 last:border-0">
           <div>
-            <p className="text-sm font-medium text-[#00174c]">{row.label}</p>
-            <p className="text-xs text-[#727687]">Due {row.date}</p>
+            <p className="text-sm font-medium text-[#1a1a1a]">{row.label}</p>
+            <p className="text-xs text-[#6b7280]">Due {row.date}</p>
           </div>
           <span
             className={`text-xs rounded-full px-3 py-1 font-medium ${
@@ -96,7 +96,7 @@ function TaxMockup() {
 
 export default function Services() {
   return (
-    <section className="py-16 md:py-[120px] bg-[#f2f3ff] overflow-hidden">
+    <section className="py-16 md:py-[120px] bg-[#eef3f1] overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-5 md:px-6 space-y-24">
         {services.map((s) => (
           <div
@@ -110,13 +110,13 @@ export default function Services() {
               <span className={`inline-block px-4 py-1 rounded-full text-sm font-medium mb-6 ${s.tagStyle}`}>
                 {s.tag}
               </span>
-              <h3 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#00174c] mb-6">
+              <h3 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#1a1a1a] mb-6">
                 {s.title}
               </h3>
-              <p className="text-lg text-[#727687] mb-8 leading-relaxed">{s.desc}</p>
+              <p className="text-lg text-[#6b7280] mb-8 leading-relaxed">{s.desc}</p>
               <a
                 href={s.href}
-                className="text-[#0053ce] font-medium flex items-center gap-2 group text-sm"
+                className="text-[#034f46] font-medium flex items-center gap-2 group text-sm"
               >
                 Learn More{" "}
                 <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>

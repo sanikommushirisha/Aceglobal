@@ -15,7 +15,7 @@ const logos = [
 type MarkType = (typeof logos)[number]["mark"];
 
 function Mark({ type }: { type: MarkType }) {
-  const common = "w-6 h-6 text-[#00174c]";
+  const common = "w-6 h-6 text-[#1a1a1a]";
   switch (type) {
     case "circle":
       return (
@@ -57,9 +57,9 @@ export default function TrustBar() {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-[1280px] mx-auto px-5 md:px-6">
-        <p className="text-center text-xs font-medium text-[#c2c6d8] mb-10 tracking-widest uppercase">
+        <p className="text-center text-xs font-medium text-[#e0e0e0] mb-10 tracking-widest uppercase">
           We&apos;ve helped thousands of{" "}
-          <RotatingWord words={["farm", "trucking", "retail"]} className="text-[#0053ce]/60" />{" "}
+          <RotatingWord words={["farm", "trucking", "retail"]} className="text-[#034f46]/60" />{" "}
           businesses manage bookkeeping, taxes and more
         </p>
       </div>
@@ -80,11 +80,11 @@ export default function TrustBar() {
               className="flex items-center gap-2.5 whitespace-nowrap"
             >
               <Mark type={logo.mark} />
-              <span className="text-lg font-semibold text-[#00174c] tracking-tight">
+              <span className="text-lg font-semibold text-[#1a1a1a] tracking-tight">
                 {logo.name}
               </span>
               {logo.badge && (
-                <span className="text-[11px] font-medium text-[#727687] border border-[#c2c6d8]/60 rounded-full px-2.5 py-0.5">
+                <span className="text-[11px] font-medium text-[#6b7280] border border-[#e0e0e0]/60 rounded-full px-2.5 py-0.5">
                   {logo.badge}
                 </span>
               )}

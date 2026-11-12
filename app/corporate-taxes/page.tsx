@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const features = [
   {
     tag: "Delaware Franchise Tax",
-    tagStyle: "bg-[#0053ce]/10 text-[#0053ce]",
+    tagStyle: "bg-[#034f46]/10 text-[#034f46]",
     title: "Franchise tax handled before it's ever late.",
     desc: "We calculate the method that saves you the most, file your Delaware Franchise Tax, and keep the annual report on schedule — no surprise penalty letters.",
     bullets: [
@@ -38,7 +38,7 @@ const features = [
   },
   {
     tag: "Always on time",
-    tagStyle: "bg-[#94a6fe]/20 text-[#243889]",
+    tagStyle: "bg-[#8fc7b8]/20 text-[#023d35]",
     title: "Every deadline tracked. Every filing confirmed.",
     desc: "Your AI agent monitors every federal and state due date, collects what's needed ahead of time, and notifies you the moment each return is filed.",
     bullets: [
@@ -51,10 +51,10 @@ const features = [
 
 function TaxMockup() {
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-6 border border-[#c2c6d8]/20 max-w-md w-full mx-auto">
+    <div className="bg-white rounded-2xl shadow-lg p-6 border border-[#e0e0e0]/20 max-w-md w-full mx-auto">
       <div className="flex items-center justify-between mb-6">
-        <p className="text-sm font-medium text-[#00174c]">Tax Filing Status</p>
-        <span className="text-xs bg-blue-100 text-[#0053ce] px-2 py-1 rounded-full font-medium">
+        <p className="text-sm font-medium text-[#1a1a1a]">Tax Filing Status</p>
+        <span className="text-xs bg-emerald-100 text-[#034f46] px-2 py-1 rounded-full font-medium">
           All Filed ✓
         </span>
       </div>
@@ -66,11 +66,11 @@ function TaxMockup() {
       ].map((row) => (
         <div
           key={row.label}
-          className="flex justify-between items-center py-3 border-b border-[#c2c6d8]/20 last:border-0"
+          className="flex justify-between items-center py-3 border-b border-[#e0e0e0]/20 last:border-0"
         >
           <div>
-            <p className="text-sm font-medium text-[#00174c]">{row.label}</p>
-            <p className="text-xs text-[#727687]">Due {row.date}</p>
+            <p className="text-sm font-medium text-[#1a1a1a]">{row.label}</p>
+            <p className="text-xs text-[#6b7280]">Due {row.date}</p>
           </div>
           <span
             className={`text-xs rounded-full px-3 py-1 font-medium ${
@@ -92,40 +92,40 @@ export default function CorporateTaxesPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 overflow-hidden bg-gradient-to-b from-[#e3e7ff] via-[#f2f3ff] to-white">
+        <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 overflow-hidden bg-gradient-to-b from-[#e0e8e5] via-[#eef3f1] to-white">
           <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-            <div className="absolute -top-24 -left-24 w-[28rem] h-[28rem] bg-[#0053ce]/25 rounded-full blur-3xl" />
-            <div className="absolute top-32 -right-24 w-[30rem] h-[30rem] bg-[#94a6fe]/40 rounded-full blur-3xl" />
+            <div className="absolute -top-24 -left-24 w-[28rem] h-[28rem] bg-[#034f46]/25 rounded-full blur-3xl" />
+            <div className="absolute top-32 -right-24 w-[30rem] h-[30rem] bg-[#8fc7b8]/40 rounded-full blur-3xl" />
           </div>
           <div className="relative z-10 max-w-[1280px] mx-auto px-5 md:px-6 text-center">
             <div className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-md border border-white/50 px-4 py-2 rounded-full mb-6 shadow-sm">
-              <span className="text-sm font-medium tracking-wide text-[#243889]">
+              <span className="text-sm font-medium tracking-wide text-[#023d35]">
                 Corporate Taxes
               </span>
             </div>
-            <h1 className="text-[32px] sm:text-[40px] md:text-[60px] font-medium leading-[1.12] md:leading-[1.1] tracking-[-0.02em] text-[#00174c] max-w-4xl mx-auto mb-5 md:mb-6">
+            <h1 className="text-[32px] sm:text-[40px] md:text-[60px] font-medium leading-[1.12] md:leading-[1.1] tracking-[-0.02em] text-[#1a1a1a] max-w-4xl mx-auto mb-5 md:mb-6">
               Get your Delaware Franchise Tax, federal &amp; state taxes —{" "}
-              <span className="text-[#0053ce]">filed on time, every time.</span>
+              <span className="text-[#034f46]">filed on time, every time.</span>
             </h1>
-            <p className="text-base md:text-lg leading-relaxed text-[#727687] max-w-2xl mx-auto mb-8 md:mb-12">
+            <p className="text-base md:text-lg leading-relaxed text-[#6b7280] max-w-2xl mx-auto mb-8 md:mb-12">
               Your CPA team and AI agent prepare every filing, track every deadline, and keep your
               company compliant — without you chasing forms or notices.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-4">
               <a
                 href="https://app.aceglobal.ai/"
-                className="inline-block text-center bg-[#0053ce] text-white px-6 md:px-8 py-2.5 md:py-4 rounded-full font-medium text-sm md:text-lg hover:bg-[#0053ce]/90 transition-all shadow-xl shadow-[#0053ce]/25"
+                className="inline-block text-center bg-[#034f46] text-white px-6 md:px-8 py-2.5 md:py-4 rounded-full font-medium text-sm md:text-lg hover:bg-[#034f46]/90 transition-all shadow-xl shadow-[#034f46]/25"
               >
                 Get started
               </a>
             </div>
-            <p className="text-xs text-[#727687] mb-16">
+            <p className="text-xs text-[#6b7280] mb-16">
               No credit card required · Cancel anytime · Onboard in 15 minutes
             </p>
 
             {/* Hero dashboard visual */}
             <div className="relative max-w-5xl mx-auto">
-              <div className="absolute -inset-4 bg-[#0053ce]/5 blur-3xl rounded-full pointer-events-none" />
+              <div className="absolute -inset-4 bg-[#034f46]/5 blur-3xl rounded-full pointer-events-none" />
               <Image
                 src="/taxes-hero.webp"
                 alt="Ace Global tax compliance dashboard"
@@ -133,24 +133,24 @@ export default function CorporateTaxesPage() {
                 height={576}
                 preload
                 sizes="(max-width: 1024px) 100vw, 1024px"
-                className="relative w-full h-auto rounded-3xl shadow-2xl border border-[#c2c6d8]/30 animate-float"
+                className="relative w-full h-auto rounded-3xl shadow-2xl border border-[#e0e0e0]/30 animate-float"
               />
             </div>
           </div>
         </section>
 
         {/* Taxes done right — 3 feature cards */}
-        <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-b from-white via-[#f2f3ff] to-[#e3e7ff]">
+        <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-b from-white via-[#eef3f1] to-[#e0e8e5]">
           <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-            <div className="absolute top-10 left-1/4 w-[26rem] h-[26rem] bg-[#196bfa]/15 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 right-10 w-[24rem] h-[24rem] bg-[#94a6fe]/30 rounded-full blur-3xl" />
+            <div className="absolute top-10 left-1/4 w-[26rem] h-[26rem] bg-[#059669]/15 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-10 w-[24rem] h-[24rem] bg-[#8fc7b8]/30 rounded-full blur-3xl" />
           </div>
           <div className="relative z-10 max-w-[1280px] mx-auto px-5 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#00174c] mb-3">
+              <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#1a1a1a] mb-3">
                 Every corporate tax, done right.
               </h2>
-              <p className="text-[#727687] text-lg max-w-xl mx-auto">
+              <p className="text-[#6b7280] text-lg max-w-xl mx-auto">
                 From your home state to every state you operate in — prepared, reviewed, and filed.
               </p>
             </div>
@@ -171,15 +171,15 @@ export default function CorporateTaxesPage() {
               ].map((c) => (
                 <div
                   key={c.title}
-                  className="bg-white/55 backdrop-blur-md border border-white/60 rounded-3xl p-8 flex flex-col shadow-xl shadow-[#0053ce]/5"
+                  className="bg-white/55 backdrop-blur-md border border-white/60 rounded-3xl p-8 flex flex-col shadow-xl shadow-[#034f46]/5"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#0053ce]/10 flex items-center justify-center text-[#0053ce] mb-5">
+                  <div className="w-12 h-12 rounded-xl bg-[#034f46]/10 flex items-center justify-center text-[#034f46] mb-5">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-medium text-[#00174c] mb-2">{c.title}</h3>
-                  <p className="text-[#727687] text-sm leading-relaxed">{c.desc}</p>
+                  <h3 className="text-xl font-medium text-[#1a1a1a] mb-2">{c.title}</h3>
+                  <p className="text-[#6b7280] text-sm leading-relaxed">{c.desc}</p>
                 </div>
               ))}
             </div>
@@ -187,13 +187,13 @@ export default function CorporateTaxesPage() {
         </section>
 
         {/* International compliance — penalty callouts */}
-        <section className="py-16 md:py-24 bg-[#f2f3ff]">
+        <section className="py-16 md:py-24 bg-[#eef3f1]">
           <div className="max-w-[1280px] mx-auto px-5 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#00174c] mb-3">
+              <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#1a1a1a] mb-3">
                 Foreign-owned? Stay penalty-free.
               </h2>
-              <p className="text-[#727687] text-lg max-w-xl mx-auto">
+              <p className="text-[#6b7280] text-lg max-w-xl mx-auto">
                 The forms with the biggest penalties for missing them — handled before they're due.
               </p>
             </div>
@@ -217,10 +217,10 @@ export default function CorporateTaxesPage() {
               ].map((c) => (
                 <div
                   key={c.form}
-                  className="bg-white rounded-3xl p-8 flex flex-col border border-[#c2c6d8]/20 shadow-sm"
+                  className="bg-white rounded-3xl p-8 flex flex-col border border-[#e0e0e0]/20 shadow-sm"
                 >
-                  <h3 className="text-xl font-medium text-[#00174c] mb-2">{c.form}</h3>
-                  <p className="text-[#727687] text-sm leading-relaxed mb-6 flex-1">{c.desc}</p>
+                  <h3 className="text-xl font-medium text-[#1a1a1a] mb-2">{c.form}</h3>
+                  <p className="text-[#6b7280] text-sm leading-relaxed mb-6 flex-1">{c.desc}</p>
                   <div className="bg-red-50 border border-red-100 rounded-xl px-4 py-3">
                     <p className="text-xs text-red-500 font-medium">Penalty if missed</p>
                     <p className="text-2xl font-semibold text-red-600">{c.penalty}</p>
@@ -232,20 +232,20 @@ export default function CorporateTaxesPage() {
         </section>
 
         {/* Bento grid */}
-        <section className="py-16 md:py-[120px] bg-[#f2f3ff]">
+        <section className="py-16 md:py-[120px] bg-[#eef3f1]">
           <div className="max-w-[1280px] mx-auto px-5 md:px-6">
-            <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] tracking-[-0.01em] text-[#00174c] text-center mb-12">
+            <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] tracking-[-0.01em] text-[#1a1a1a] text-center mb-12">
               Taxes handled, deadlines covered.
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:h-[620px]">
               {/* Tax experts */}
-              <div className="md:col-span-7 bg-white p-8 rounded-3xl shadow-sm border border-[#c2c6d8]/20 flex flex-col justify-between overflow-hidden group">
+              <div className="md:col-span-7 bg-white p-8 rounded-3xl shadow-sm border border-[#e0e0e0]/20 flex flex-col justify-between overflow-hidden group">
                 <div>
-                  <h3 className="text-2xl font-medium text-[#00174c] mb-2">
+                  <h3 className="text-2xl font-medium text-[#1a1a1a] mb-2">
                     Dedicated tax experts
                   </h3>
-                  <p className="text-[#727687]">
+                  <p className="text-[#6b7280]">
                     CPAs and EAs who handle federal, state, and franchise filings — from single-state
                     LLCs to complex multi-state C-Corps. They prepare, review, and file every return.
                   </p>
@@ -258,17 +258,17 @@ export default function CorporateTaxesPage() {
                       alt="Tax expert"
                       width={64}
                       height={64}
-                      className="w-16 h-16 rounded-full object-cover border-4 border-[#ebedff]"
+                      className="w-16 h-16 rounded-full object-cover border-4 border-[#e8f5f3]"
                     />
                   ))}
-                  <div className="w-16 h-16 rounded-full bg-[#0053ce]/10 flex items-center justify-center text-[#0053ce] font-semibold text-sm">
+                  <div className="w-16 h-16 rounded-full bg-[#034f46]/10 flex items-center justify-center text-[#034f46] font-semibold text-sm">
                     +9
                   </div>
                 </div>
               </div>
 
               {/* Penalties avoided stat */}
-              <div className="md:col-span-5 bg-[#0053ce] p-8 rounded-3xl shadow-lg flex flex-col justify-between text-white relative overflow-hidden">
+              <div className="md:col-span-5 bg-[#034f46] p-8 rounded-3xl shadow-lg flex flex-col justify-between text-white relative overflow-hidden">
                 <div className="relative z-10">
                   <h3 className="text-2xl font-medium mb-2">$2M+ Avoided</h3>
                   <p className="opacity-80">
@@ -289,16 +289,16 @@ export default function CorporateTaxesPage() {
               </div>
 
               {/* Filing autopilot wide card */}
-              <div className="md:col-span-12 bg-[#172d65] text-white p-8 rounded-3xl shadow-sm flex flex-col md:flex-row items-center gap-8 group">
+              <div className="md:col-span-12 bg-[#023d35] text-white p-8 rounded-3xl shadow-sm flex flex-col md:flex-row items-center gap-8 group">
                 <div className="flex-1">
                   <h3 className="text-2xl font-medium mb-2">Filings on autopilot</h3>
-                  <p className="text-[#dbe1ff]/60">
+                  <p className="text-[#e0e8e5]/60">
                     Your AI agent tracks every federal and state deadline, collects what's needed
                     ahead of time, and confirms each return the moment it's filed.
                   </p>
                 </div>
                 <div className="w-full md:w-80 bg-white/10 rounded-2xl p-5 group-hover:scale-[1.02] transition-transform">
-                  <p className="text-xs font-medium text-[#b2c5ff] mb-3 uppercase tracking-wider">
+                  <p className="text-xs font-medium text-[#a7d7c9] mb-3 uppercase tracking-wider">
                     Upcoming Deadlines
                   </p>
                   {[
@@ -312,7 +312,7 @@ export default function CorporateTaxesPage() {
                     >
                       <div>
                         <p className="text-sm text-white">{row.name}</p>
-                        <span className="text-[10px] bg-blue-500/20 text-[#b2c5ff] px-2 py-0.5 rounded-full font-medium">
+                        <span className="text-[10px] bg-emerald-500/20 text-[#a7d7c9] px-2 py-0.5 rounded-full font-medium">
                           {row.note}
                         </span>
                       </div>
@@ -326,7 +326,7 @@ export default function CorporateTaxesPage() {
         </section>
 
         {/* Feature rows */}
-        <section className="py-16 md:py-[120px] bg-[#f2f3ff] overflow-hidden">
+        <section className="py-16 md:py-[120px] bg-[#eef3f1] overflow-hidden">
           <div className="max-w-[1280px] mx-auto px-5 md:px-6 space-y-24">
             {features.map((f, i) => (
               <div
@@ -339,15 +339,15 @@ export default function CorporateTaxesPage() {
                   >
                     {f.tag}
                   </span>
-                  <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#00174c] mb-6">
+                  <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#1a1a1a] mb-6">
                     {f.title}
                   </h2>
-                  <p className="text-lg text-[#727687] mb-8 leading-relaxed">{f.desc}</p>
+                  <p className="text-lg text-[#6b7280] mb-8 leading-relaxed">{f.desc}</p>
                   <ul className="space-y-3">
                     {f.bullets.map((b) => (
-                      <li key={b} className="flex items-center gap-3 text-[#00174c]">
+                      <li key={b} className="flex items-center gap-3 text-[#1a1a1a]">
                         <svg
-                          className="w-5 h-5 text-[#0053ce] shrink-0"
+                          className="w-5 h-5 text-[#034f46] shrink-0"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -376,20 +376,20 @@ export default function CorporateTaxesPage() {
         <section className="py-16 md:py-[120px] bg-white">
           <div className="max-w-[1100px] mx-auto px-5 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#00174c] mb-3">
+              <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#1a1a1a] mb-3">
                 Ace Global vs. the alternatives
               </h2>
-              <p className="text-[#727687] text-lg">
+              <p className="text-[#6b7280] text-lg">
                 A modern tax team vs. the old way of filing.
               </p>
             </div>
 
-            <div className="overflow-hidden rounded-3xl border border-[#c2c6d8]/30 shadow-sm">
-              <div className="grid grid-cols-4 bg-[#172d65] text-white text-sm font-medium">
+            <div className="overflow-hidden rounded-3xl border border-[#e0e0e0]/30 shadow-sm">
+              <div className="grid grid-cols-4 bg-[#023d35] text-white text-sm font-medium">
                 <div className="p-4 md:p-5" />
-                <div className="p-4 md:p-5 text-center bg-[#0053ce]">Ace Global</div>
-                <div className="p-4 md:p-5 text-center text-[#dbe1ff]/80">Local CPA firm</div>
-                <div className="p-4 md:p-5 text-center text-[#dbe1ff]/80">DIY filing</div>
+                <div className="p-4 md:p-5 text-center bg-[#034f46]">Ace Global</div>
+                <div className="p-4 md:p-5 text-center text-[#e0e8e5]/80">Local CPA firm</div>
+                <div className="p-4 md:p-5 text-center text-[#e0e8e5]/80">DIY filing</div>
               </div>
               {[
                 ["All-inclusive pricing", true, false, false],
@@ -403,9 +403,9 @@ export default function CorporateTaxesPage() {
               ].map((row, i) => (
                 <div
                   key={row[0] as string}
-                  className={`grid grid-cols-4 text-sm ${i % 2 ? "bg-[#f2f3ff]" : "bg-white"}`}
+                  className={`grid grid-cols-4 text-sm ${i % 2 ? "bg-[#eef3f1]" : "bg-white"}`}
                 >
-                  <div className="p-4 md:p-5 text-[#00174c] font-medium">{row[0]}</div>
+                  <div className="p-4 md:p-5 text-[#1a1a1a] font-medium">{row[0]}</div>
                   {[row[1], row[2], row[3]].map((v, j) => (
                     <div key={j} className="p-4 md:p-5 flex items-center justify-center">
                       {v ? (
@@ -415,7 +415,7 @@ export default function CorporateTaxesPage() {
                           </svg>
                         </span>
                       ) : (
-                        <span className="w-6 h-6 rounded-full bg-[#c2c6d8]/30 flex items-center justify-center text-[#727687]">
+                        <span className="w-6 h-6 rounded-full bg-[#e0e0e0]/30 flex items-center justify-center text-[#6b7280]">
                           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
                           </svg>
@@ -430,9 +430,9 @@ export default function CorporateTaxesPage() {
         </section>
 
         {/* Testimonials strip */}
-        <section className="py-16 md:py-[120px] bg-[#f2f3ff]">
+        <section className="py-16 md:py-[120px] bg-[#eef3f1]">
           <div className="max-w-[1280px] mx-auto px-5 md:px-6">
-            <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] tracking-[-0.01em] text-[#00174c] text-center mb-12 max-w-2xl mx-auto">
+            <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] tracking-[-0.01em] text-[#1a1a1a] text-center mb-12 max-w-2xl mx-auto">
               &ldquo;Every filing on time, no surprises at year-end.&rdquo;
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -443,7 +443,7 @@ export default function CorporateTaxesPage() {
                   name: "James Wilson",
                   role: "Owner, Wilson Auto Repair",
                   initials: "JW",
-                  color: "bg-[#0053ce]",
+                  color: "bg-[#034f46]",
                 },
                 {
                   quote:
@@ -451,7 +451,7 @@ export default function CorporateTaxesPage() {
                   name: "Aria Song",
                   role: "CEO, Horizon Lab",
                   initials: "AS",
-                  color: "bg-[#4658aa]",
+                  color: "bg-[#034f46]",
                 },
                 {
                   quote:
@@ -459,26 +459,26 @@ export default function CorporateTaxesPage() {
                   name: "David Kim",
                   role: "Founder, Kim Home Services",
                   initials: "DK",
-                  color: "bg-[#172d65]",
+                  color: "bg-[#023d35]",
                 },
               ].map((t) => (
                 <div
                   key={t.name}
-                  className="bg-white rounded-2xl p-6 shadow-sm border border-[#c2c6d8]/20 flex flex-col gap-4"
+                  className="bg-white rounded-2xl p-6 shadow-sm border border-[#e0e0e0]/20 flex flex-col gap-4"
                 >
                   <div className="flex text-yellow-400 text-sm">{"★★★★★"}</div>
-                  <p className="text-[#424655] text-sm leading-relaxed flex-1">
+                  <p className="text-[#374151] text-sm leading-relaxed flex-1">
                     &ldquo;{t.quote}&rdquo;
                   </p>
-                  <div className="flex items-center gap-3 pt-2 border-t border-[#c2c6d8]/20">
+                  <div className="flex items-center gap-3 pt-2 border-t border-[#e0e0e0]/20">
                     <div
                       className={`w-9 h-9 rounded-full ${t.color} flex items-center justify-center text-white text-xs font-semibold shrink-0`}
                     >
                       {t.initials}
                     </div>
                     <div>
-                      <p className="text-[#00174c] text-sm font-medium">{t.name}</p>
-                      <p className="text-[#727687] text-xs">{t.role}</p>
+                      <p className="text-[#1a1a1a] text-sm font-medium">{t.name}</p>
+                      <p className="text-[#6b7280] text-xs">{t.role}</p>
                     </div>
                   </div>
                 </div>

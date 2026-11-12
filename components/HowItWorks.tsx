@@ -39,7 +39,7 @@ export default function HowItWorks() {
     <section id="platform" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-indigo-400 text-sm font-medium uppercase tracking-widest mb-3">
+          <p className="text-emerald-400 text-sm font-medium uppercase tracking-widest mb-3">
             How it works
           </p>
           <h2 className="text-4xl md:text-5xl font-semibold text-white mb-4">
@@ -52,17 +52,17 @@ export default function HowItWorks() {
 
         <div className="grid md:grid-cols-3 gap-8 relative">
           {/* Connector line */}
-          <div className="hidden md:block absolute top-10 left-1/3 right-1/3 h-px bg-gradient-to-r from-indigo-500/50 to-purple-500/50" />
+          <div className="hidden md:block absolute top-10 left-1/3 right-1/3 h-px bg-gradient-to-r from-emerald-500/50 to-teal-500/50" />
 
           {steps.map((step, i) => (
             <div key={step.number} className="relative flex flex-col items-center text-center md:items-start md:text-left">
               {/* Number pill */}
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white font-semibold text-sm mb-6 relative z-10">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white font-semibold text-sm mb-6 relative z-10">
                 {i + 1}
               </div>
 
               <div className="card-glass rounded-2xl p-6 w-full">
-                <div className="text-indigo-400 mb-4">{step.icon}</div>
+                <div className="text-emerald-400 mb-4">{step.icon}</div>
                 <h3 className="text-xl font-semibold text-white mb-3">{step.title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{step.description}</p>
               </div>

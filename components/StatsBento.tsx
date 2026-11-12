@@ -2,7 +2,7 @@ export default function StatsBento() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-[1280px] mx-auto px-5 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-[#ebedff] p-5 md:p-8 rounded-[32px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-[#e8f5f3] p-5 md:p-8 rounded-[32px]">
           {[
             {
               value: "Established in 2021",
@@ -22,8 +22,8 @@ export default function StatsBento() {
             },
           ].map((item, i) => (
             <div key={i} className="bg-white rounded-2xl p-6 flex flex-col justify-center">
-              <h3 className="text-2xl md:text-3xl font-semibold text-[#00174c] mb-2">{item.value}</h3>
-              <p className="text-sm text-[#727687] leading-relaxed">{item.desc}</p>
+              <h3 className="text-2xl md:text-3xl font-semibold text-[#1a1a1a] mb-2">{item.value}</h3>
+              <p className="text-sm text-[#6b7280] leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>

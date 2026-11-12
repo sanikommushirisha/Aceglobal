@@ -27,7 +27,7 @@ const features = [
   },
   {
     tag: "Dedicated team",
-    tagStyle: "bg-[#0053ce]/10 text-[#0053ce]",
+    tagStyle: "bg-[#034f46]/10 text-[#034f46]",
     title: "A real bookkeeper who knows your business.",
     desc: "You get a dedicated bookkeeper backed by CPAs — reachable on WhatsApp or iMessage. Your AI agent answers day-to-day questions about your numbers in real time.",
     bullets: [
@@ -38,7 +38,7 @@ const features = [
   },
   {
     tag: "Investor ready",
-    tagStyle: "bg-[#94a6fe]/20 text-[#243889]",
+    tagStyle: "bg-[#8fc7b8]/20 text-[#023d35]",
     title: "Financials you can hand to anyone.",
     desc: "Clean statements that hold up with lenders, investors, and the IRS. Historical cleanup is included in onboarding, so you start from a tidy baseline.",
     bullets: [
@@ -51,9 +51,9 @@ const features = [
 
 function BooksMockup() {
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-6 border border-[#c2c6d8]/20 max-w-md w-full mx-auto">
+    <div className="bg-white rounded-2xl shadow-lg p-6 border border-[#e0e0e0]/20 max-w-md w-full mx-auto">
       <div className="flex items-center justify-between mb-6">
-        <p className="text-sm font-medium text-[#00174c]">Monthly Close — June</p>
+        <p className="text-sm font-medium text-[#1a1a1a]">Monthly Close — June</p>
         <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium">
           ✓ Closed
         </span>
@@ -66,13 +66,13 @@ function BooksMockup() {
       ].map((row) => (
         <div
           key={row.label}
-          className="flex justify-between items-center py-3 border-b border-[#c2c6d8]/20 last:border-0"
+          className="flex justify-between items-center py-3 border-b border-[#e0e0e0]/20 last:border-0"
         >
-          <span className="text-sm text-[#727687]">{row.label}</span>
-          <span className="text-sm font-semibold text-[#00174c]">{row.value}</span>
+          <span className="text-sm text-[#6b7280]">{row.label}</span>
+          <span className="text-sm font-semibold text-[#1a1a1a]">{row.value}</span>
         </div>
       ))}
-      <div className="mt-4 pt-4 border-t border-[#c2c6d8]/20 flex items-center gap-2 text-xs text-[#727687]">
+      <div className="mt-4 pt-4 border-t border-[#e0e0e0]/20 flex items-center gap-2 text-xs text-[#6b7280]">
         <span className="w-2 h-2 rounded-full bg-green-400" />
         Reconciled by your bookkeeper
       </div>
@@ -87,27 +87,27 @@ export default function BookkeepingPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 overflow-hidden bg-gradient-to-b from-[#e3e7ff] via-[#f2f3ff] to-white">
+        <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 overflow-hidden bg-gradient-to-b from-[#e0e8e5] via-[#eef3f1] to-white">
           <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-            <div className="absolute -top-24 -left-24 w-[28rem] h-[28rem] bg-[#0053ce]/25 rounded-full blur-3xl" />
-            <div className="absolute top-32 -right-24 w-[30rem] h-[30rem] bg-[#94a6fe]/40 rounded-full blur-3xl" />
+            <div className="absolute -top-24 -left-24 w-[28rem] h-[28rem] bg-[#034f46]/25 rounded-full blur-3xl" />
+            <div className="absolute top-32 -right-24 w-[30rem] h-[30rem] bg-[#8fc7b8]/40 rounded-full blur-3xl" />
           </div>
           <div className="relative z-10 max-w-[1280px] mx-auto px-5 md:px-6 text-center">
             <div className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-md border border-white/50 px-4 py-2 rounded-full mb-6 shadow-sm">
-              <span className="text-sm font-medium tracking-wide text-[#243889]">Bookkeeping</span>
+              <span className="text-sm font-medium tracking-wide text-[#023d35]">Bookkeeping</span>
             </div>
-            <h1 className="text-[32px] sm:text-[40px] md:text-[60px] font-medium leading-[1.12] md:leading-[1.1] tracking-[-0.02em] text-[#00174c] max-w-4xl mx-auto mb-5 md:mb-6">
+            <h1 className="text-[32px] sm:text-[40px] md:text-[60px] font-medium leading-[1.12] md:leading-[1.1] tracking-[-0.02em] text-[#1a1a1a] max-w-4xl mx-auto mb-5 md:mb-6">
               Get your books closed and your financials —{" "}
-              <span className="text-[#0053ce]">monthly, quarterly, or annually.</span>
+              <span className="text-[#034f46]">monthly, quarterly, or annually.</span>
             </h1>
-            <p className="text-base md:text-lg leading-relaxed text-[#727687] max-w-2xl mx-auto mb-8 md:mb-12">
+            <p className="text-base md:text-lg leading-relaxed text-[#6b7280] max-w-2xl mx-auto mb-8 md:mb-12">
               A dedicated CPA-led team keeps your books continuously updated across banks, Stripe,
               and business systems — so you always know your burn, runway, and cash flow.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-16">
               <a
                 href="https://app.aceglobal.ai/"
-                className="inline-block text-center bg-[#0053ce] text-white px-6 md:px-8 py-2.5 md:py-4 rounded-full font-medium text-sm md:text-lg hover:bg-[#0053ce]/90 transition-all shadow-xl shadow-[#0053ce]/25"
+                className="inline-block text-center bg-[#034f46] text-white px-6 md:px-8 py-2.5 md:py-4 rounded-full font-medium text-sm md:text-lg hover:bg-[#034f46]/90 transition-all shadow-xl shadow-[#034f46]/25"
               >
                 Get started
               </a>
@@ -115,7 +115,7 @@ export default function BookkeepingPage() {
 
             {/* Hero dashboard visual */}
             <div className="relative max-w-5xl mx-auto">
-              <div className="absolute -inset-4 bg-[#0053ce]/5 blur-3xl rounded-full pointer-events-none" />
+              <div className="absolute -inset-4 bg-[#034f46]/5 blur-3xl rounded-full pointer-events-none" />
               <Image
                 src="/bookkeeping-hero.webp"
                 alt="Ace Global bookkeeping dashboard"
@@ -123,20 +123,20 @@ export default function BookkeepingPage() {
                 height={576}
                 preload
                 sizes="(max-width: 1024px) 100vw, 1024px"
-                className="relative w-full h-auto rounded-3xl shadow-2xl border border-[#c2c6d8]/30 animate-float"
+                className="relative w-full h-auto rounded-3xl shadow-2xl border border-[#e0e0e0]/30 animate-float"
               />
             </div>
           </div>
         </section>
 
         {/* Metric cards trio */}
-        <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-b from-white via-[#f2f3ff] to-[#e3e7ff]">
+        <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-b from-white via-[#eef3f1] to-[#e0e8e5]">
           <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-            <div className="absolute top-10 left-1/4 w-[26rem] h-[26rem] bg-[#196bfa]/15 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 right-10 w-[24rem] h-[24rem] bg-[#94a6fe]/30 rounded-full blur-3xl" />
+            <div className="absolute top-10 left-1/4 w-[26rem] h-[26rem] bg-[#059669]/15 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-10 w-[24rem] h-[24rem] bg-[#8fc7b8]/30 rounded-full blur-3xl" />
           </div>
           <div className="relative z-10 max-w-[1280px] mx-auto px-5 md:px-6">
-            <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#00174c] text-center mb-12 max-w-2xl mx-auto">
+            <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#1a1a1a] text-center mb-12 max-w-2xl mx-auto">
               The numbers that matter, ready at every close.
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -153,24 +153,24 @@ export default function BookkeepingPage() {
                   value: "+$35,350",
                   desc: "Clear performance every month — revenue, expenses, and net income.",
                   sub: "Net income · June",
-                  subColor: "text-[#727687]",
+                  subColor: "text-[#6b7280]",
                 },
                 {
                   label: "Balance Sheet",
                   value: "$142,000",
                   desc: "Investor-ready statements that hold up with lenders and the IRS.",
                   sub: "Cash balance",
-                  subColor: "text-[#727687]",
+                  subColor: "text-[#6b7280]",
                 },
               ].map((m) => (
                 <div
                   key={m.label}
-                  className="bg-white/55 backdrop-blur-md border border-white/60 rounded-3xl p-8 flex flex-col shadow-xl shadow-[#0053ce]/5"
+                  className="bg-white/55 backdrop-blur-md border border-white/60 rounded-3xl p-8 flex flex-col shadow-xl shadow-[#034f46]/5"
                 >
-                  <p className="text-sm font-medium text-[#0053ce] mb-3">{m.label}</p>
-                  <p className="text-4xl font-semibold text-[#00174c] mb-1">{m.value}</p>
+                  <p className="text-sm font-medium text-[#034f46] mb-3">{m.label}</p>
+                  <p className="text-4xl font-semibold text-[#1a1a1a] mb-1">{m.value}</p>
                   <p className={`text-sm font-medium mb-5 ${m.subColor}`}>{m.sub}</p>
-                  <p className="text-[#727687] text-sm leading-relaxed">{m.desc}</p>
+                  <p className="text-[#6b7280] text-sm leading-relaxed">{m.desc}</p>
                 </div>
               ))}
             </div>
@@ -178,20 +178,20 @@ export default function BookkeepingPage() {
         </section>
 
         {/* Bento grid */}
-        <section className="py-16 md:py-[120px] bg-[#f2f3ff]">
+        <section className="py-16 md:py-[120px] bg-[#eef3f1]">
           <div className="max-w-[1280px] mx-auto px-5 md:px-6">
-            <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] tracking-[-0.01em] text-[#00174c] text-center mb-12">
+            <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] tracking-[-0.01em] text-[#1a1a1a] text-center mb-12">
               Bookkeeping that runs itself.
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:h-[620px]">
               {/* Dedicated team */}
-              <div className="md:col-span-7 bg-white p-8 rounded-3xl shadow-sm border border-[#c2c6d8]/20 flex flex-col justify-between overflow-hidden group">
+              <div className="md:col-span-7 bg-white p-8 rounded-3xl shadow-sm border border-[#e0e0e0]/20 flex flex-col justify-between overflow-hidden group">
                 <div>
-                  <h3 className="text-2xl font-medium text-[#00174c] mb-2">
+                  <h3 className="text-2xl font-medium text-[#1a1a1a] mb-2">
                     Your dedicated bookkeeping team
                   </h3>
-                  <p className="text-[#727687]">
+                  <p className="text-[#6b7280]">
                     Real bookkeepers backed by CPAs who learn how your business runs — categorizing
                     transactions, reconciling accounts, and closing your books on schedule.
                   </p>
@@ -204,17 +204,17 @@ export default function BookkeepingPage() {
                       alt="Bookkeeper"
                       width={64}
                       height={64}
-                      className="w-16 h-16 rounded-full object-cover border-4 border-[#ebedff]"
+                      className="w-16 h-16 rounded-full object-cover border-4 border-[#e8f5f3]"
                     />
                   ))}
-                  <div className="w-16 h-16 rounded-full bg-[#0053ce]/10 flex items-center justify-center text-[#0053ce] font-semibold text-sm">
+                  <div className="w-16 h-16 rounded-full bg-[#034f46]/10 flex items-center justify-center text-[#034f46] font-semibold text-sm">
                     +12
                   </div>
                 </div>
               </div>
 
               {/* Volume stat */}
-              <div className="md:col-span-5 bg-[#0053ce] p-8 rounded-3xl shadow-lg flex flex-col justify-between text-white relative overflow-hidden">
+              <div className="md:col-span-5 bg-[#034f46] p-8 rounded-3xl shadow-lg flex flex-col justify-between text-white relative overflow-hidden">
                 <div className="relative z-10">
                   <h3 className="text-2xl font-medium mb-2">$1B+ Categorized</h3>
                   <p className="opacity-80">
@@ -235,16 +235,16 @@ export default function BookkeepingPage() {
               </div>
 
               {/* Autopilot wide card */}
-              <div className="md:col-span-12 bg-[#172d65] text-white p-8 rounded-3xl shadow-sm flex flex-col md:flex-row items-center gap-8 group">
+              <div className="md:col-span-12 bg-[#023d35] text-white p-8 rounded-3xl shadow-sm flex flex-col md:flex-row items-center gap-8 group">
                 <div className="flex-1">
                   <h3 className="text-2xl font-medium mb-2">Reconciliation on autopilot</h3>
-                  <p className="text-[#dbe1ff]/60">
+                  <p className="text-[#e0e8e5]/60">
                     Every bank account, card, and payout syncs in real time. Your books stay current
                     between closes — no end-of-month scramble.
                   </p>
                 </div>
                 <div className="w-full md:w-80 bg-white/10 rounded-2xl p-5 group-hover:scale-[1.02] transition-transform">
-                  <p className="text-xs font-medium text-[#b2c5ff] mb-3 uppercase tracking-wider">
+                  <p className="text-xs font-medium text-[#a7d7c9] mb-3 uppercase tracking-wider">
                     Recent Activity
                   </p>
                   {[
@@ -272,7 +272,7 @@ export default function BookkeepingPage() {
         </section>
 
         {/* Feature rows */}
-        <section className="py-16 md:py-[120px] bg-[#f2f3ff] overflow-hidden">
+        <section className="py-16 md:py-[120px] bg-[#eef3f1] overflow-hidden">
           <div className="max-w-[1280px] mx-auto px-5 md:px-6 space-y-24">
             {features.map((f, i) => (
               <div
@@ -285,15 +285,15 @@ export default function BookkeepingPage() {
                   >
                     {f.tag}
                   </span>
-                  <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#00174c] mb-6">
+                  <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#1a1a1a] mb-6">
                     {f.title}
                   </h2>
-                  <p className="text-lg text-[#727687] mb-8 leading-relaxed">{f.desc}</p>
+                  <p className="text-lg text-[#6b7280] mb-8 leading-relaxed">{f.desc}</p>
                   <ul className="space-y-3">
                     {f.bullets.map((b) => (
-                      <li key={b} className="flex items-center gap-3 text-[#00174c]">
+                      <li key={b} className="flex items-center gap-3 text-[#1a1a1a]">
                         <svg
-                          className="w-5 h-5 text-[#0053ce] shrink-0"
+                          className="w-5 h-5 text-[#034f46] shrink-0"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -322,20 +322,20 @@ export default function BookkeepingPage() {
         <section className="py-16 md:py-[120px] bg-white">
           <div className="max-w-[1100px] mx-auto px-5 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#00174c] mb-3">
+              <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#1a1a1a] mb-3">
                 Ace Global vs. the alternatives
               </h2>
-              <p className="text-[#727687] text-lg">
+              <p className="text-[#6b7280] text-lg">
                 A modern accounting team vs. the old way of doing books.
               </p>
             </div>
 
-            <div className="overflow-hidden rounded-3xl border border-[#c2c6d8]/30 shadow-sm">
-              <div className="grid grid-cols-4 bg-[#172d65] text-white text-sm font-medium">
+            <div className="overflow-hidden rounded-3xl border border-[#e0e0e0]/30 shadow-sm">
+              <div className="grid grid-cols-4 bg-[#023d35] text-white text-sm font-medium">
                 <div className="p-4 md:p-5" />
-                <div className="p-4 md:p-5 text-center bg-[#0053ce] rounded-tl-2xl">Ace Global</div>
-                <div className="p-4 md:p-5 text-center text-[#dbe1ff]/80">Local CPA firm</div>
-                <div className="p-4 md:p-5 text-center text-[#dbe1ff]/80">DIY spreadsheets</div>
+                <div className="p-4 md:p-5 text-center bg-[#034f46] rounded-tl-2xl">Ace Global</div>
+                <div className="p-4 md:p-5 text-center text-[#e0e8e5]/80">Local CPA firm</div>
+                <div className="p-4 md:p-5 text-center text-[#e0e8e5]/80">DIY spreadsheets</div>
               </div>
               {[
                 ["All-inclusive pricing", true, false, false],
@@ -349,9 +349,9 @@ export default function BookkeepingPage() {
               ].map((row, i) => (
                 <div
                   key={row[0] as string}
-                  className={`grid grid-cols-4 text-sm ${i % 2 ? "bg-[#f2f3ff]" : "bg-white"}`}
+                  className={`grid grid-cols-4 text-sm ${i % 2 ? "bg-[#eef3f1]" : "bg-white"}`}
                 >
-                  <div className="p-4 md:p-5 text-[#00174c] font-medium">{row[0]}</div>
+                  <div className="p-4 md:p-5 text-[#1a1a1a] font-medium">{row[0]}</div>
                   {[row[1], row[2], row[3]].map((v, j) => (
                     <div key={j} className="p-4 md:p-5 flex items-center justify-center">
                       {v ? (
@@ -361,7 +361,7 @@ export default function BookkeepingPage() {
                           </svg>
                         </span>
                       ) : (
-                        <span className="w-6 h-6 rounded-full bg-[#c2c6d8]/30 flex items-center justify-center text-[#727687]">
+                        <span className="w-6 h-6 rounded-full bg-[#e0e0e0]/30 flex items-center justify-center text-[#6b7280]">
                           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
                           </svg>
@@ -376,9 +376,9 @@ export default function BookkeepingPage() {
         </section>
 
         {/* Testimonials strip */}
-        <section className="py-16 md:py-[120px] bg-[#f2f3ff]">
+        <section className="py-16 md:py-[120px] bg-[#eef3f1]">
           <div className="max-w-[1280px] mx-auto px-5 md:px-6">
-            <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] tracking-[-0.01em] text-[#00174c] text-center mb-12 max-w-2xl mx-auto">
+            <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] tracking-[-0.01em] text-[#1a1a1a] text-center mb-12 max-w-2xl mx-auto">
               &ldquo;Clean books, every month, without me chasing anyone.&rdquo;
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -389,7 +389,7 @@ export default function BookkeepingPage() {
                   name: "Sophie Lin",
                   role: "Owner, Brightwave Salon",
                   initials: "SL",
-                  color: "bg-[#0053ce]",
+                  color: "bg-[#034f46]",
                 },
                 {
                   quote:
@@ -397,7 +397,7 @@ export default function BookkeepingPage() {
                   name: "Priya Kapoor",
                   role: "Owner, Kapoor Dental Group",
                   initials: "PK",
-                  color: "bg-[#172d65]",
+                  color: "bg-[#023d35]",
                 },
                 {
                   quote:
@@ -405,26 +405,26 @@ export default function BookkeepingPage() {
                   name: "Rachel Chen",
                   role: "Owner, Bay Area Café",
                   initials: "RC",
-                  color: "bg-[#4658aa]",
+                  color: "bg-[#034f46]",
                 },
               ].map((t) => (
                 <div
                   key={t.name}
-                  className="bg-white rounded-2xl p-6 shadow-sm border border-[#c2c6d8]/20 flex flex-col gap-4"
+                  className="bg-white rounded-2xl p-6 shadow-sm border border-[#e0e0e0]/20 flex flex-col gap-4"
                 >
                   <div className="flex text-yellow-400 text-sm">{"★★★★★"}</div>
-                  <p className="text-[#424655] text-sm leading-relaxed flex-1">
+                  <p className="text-[#374151] text-sm leading-relaxed flex-1">
                     &ldquo;{t.quote}&rdquo;
                   </p>
-                  <div className="flex items-center gap-3 pt-2 border-t border-[#c2c6d8]/20">
+                  <div className="flex items-center gap-3 pt-2 border-t border-[#e0e0e0]/20">
                     <div
                       className={`w-9 h-9 rounded-full ${t.color} flex items-center justify-center text-white text-xs font-semibold shrink-0`}
                     >
                       {t.initials}
                     </div>
                     <div>
-                      <p className="text-[#00174c] text-sm font-medium">{t.name}</p>
-                      <p className="text-[#727687] text-xs">{t.role}</p>
+                      <p className="text-[#1a1a1a] text-sm font-medium">{t.name}</p>
+                      <p className="text-[#6b7280] text-xs">{t.role}</p>
                     </div>
                   </div>
                 </div>

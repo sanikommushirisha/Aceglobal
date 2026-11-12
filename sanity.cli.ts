@@ -4,7 +4,7 @@ import { defineCliConfig } from "sanity/cli";
 // to target. Mirrors sanity/env.ts so the two can't drift apart.
 export default defineCliConfig({
   api: {
-    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "qpeoflzk",
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "eiuo7osi",
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   },
 });

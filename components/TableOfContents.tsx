@@ -78,8 +78,8 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
             "block border-l-2 -ml-px py-1.5 text-sm leading-snug transition-colors " +
             (h.level === 3 ? "pl-7" : "pl-4") +
             (active
-              ? " border-[#0053ce] text-[#0053ce] font-medium"
-              : " border-transparent text-[#727687] hover:text-[#00174c]")
+              ? " border-[#034f46] text-[#034f46] font-medium"
+              : " border-transparent text-[#6b7280] hover:text-[#1a1a1a]")
           }
         >
           {h.text}
@@ -89,7 +89,7 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
   };
 
   const label = (
-    <p className="text-xs font-semibold uppercase tracking-wider text-[#00174c]">
+    <p className="text-xs font-semibold uppercase tracking-wider text-[#1a1a1a]">
       On this page
     </p>
   );
@@ -98,15 +98,15 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
     <aside className="mb-10 lg:mb-0 lg:sticky lg:top-28 lg:self-start">
       {/* Narrow screens: collapsed by default so it never pushes the article
           itself below the fold. */}
-      <details className="lg:hidden rounded-2xl border border-[#e3e6ef] px-4 py-3">
+      <details className="lg:hidden rounded-2xl border border-[#e5e7eb] px-4 py-3">
         <summary className="cursor-pointer list-none flex items-center justify-between gap-3">
           {label}
-          <span aria-hidden className="text-[#727687] text-lg leading-none">
+          <span aria-hidden className="text-[#6b7280] text-lg leading-none">
             +
           </span>
         </summary>
         <nav aria-label="On this page" className="mt-3">
-          <ul className="border-l border-[#e3e6ef]">{headings.map(link)}</ul>
+          <ul className="border-l border-[#e5e7eb]">{headings.map(link)}</ul>
         </nav>
       </details>
 
@@ -115,7 +115,7 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
         className="hidden lg:block max-h-[calc(100vh-9rem)] overflow-y-auto"
       >
         {label}
-        <ul className="mt-4 border-l border-[#e3e6ef]">{headings.map(link)}</ul>
+        <ul className="mt-4 border-l border-[#e5e7eb]">{headings.map(link)}</ul>
       </nav>
     </aside>
   );

@@ -12,10 +12,10 @@ export default function Hero() {
       <div className="relative z-10 max-w-[1280px] mx-auto px-5 md:px-6 text-center">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-md border border-white/50 px-4 py-2 rounded-full mb-6 shadow-sm">
-          <div className="flex text-[#0053ce] text-base">
+          <div className="flex text-[#034f46] text-base">
             {"★★★★★"}
           </div>
-          <span className="text-sm font-medium tracking-wide text-[#243889]">
+          <span className="text-sm font-medium tracking-wide text-[#023d35]">
             5-star bookkeeping for{" "}
             <RotatingText
               texts={["startups", "small businesses", "agencies", "founders", "freelancers"]}
@@ -24,7 +24,7 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="relative text-[32px] sm:text-[40px] md:text-[60px] font-medium leading-[1.12] md:leading-[1.1] tracking-[-0.02em] text-[#00174c] max-w-4xl mx-auto mb-5 md:mb-6">
+        <h1 className="relative text-[32px] sm:text-[40px] md:text-[60px] font-medium leading-[1.12] md:leading-[1.1] tracking-[-0.02em] text-[#1a1a1a] max-w-4xl mx-auto mb-5 md:mb-6">
           {/* Invisible sizer reserves the height of the longest-word case so the
               subheadline and CTA buttons never shift as the word cycles. The
               longest word is kept non-breaking to match RotatingWord's atomic
@@ -38,12 +38,12 @@ export default function Hero() {
             Your{" "}
             <RotatingText texts={["farm", "trucking", "retail", "small business"]} />{" "}
             books &amp; taxes —{" "}
-            <span className="text-[#0053ce]">completely off your plate.</span>
+            <span className="text-[#034f46]">completely off your plate.</span>
           </span>
         </h1>
 
         {/* Subheadline */}
-        <p className="text-base md:text-lg leading-relaxed text-[#727687] max-w-2xl mx-auto mb-8 md:mb-12">
+        <p className="text-base md:text-lg leading-relaxed text-[#6b7280] max-w-2xl mx-auto mb-8 md:mb-12">
           Ace Global is the all-in-one accounting platform that combines expert CPAs with powerful
           software to handle everything for you.
         </p>
@@ -52,7 +52,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
           <a
             href="https://app.aceglobal.ai/"
-            className="inline-block text-center bg-[#0053ce] text-white px-6 md:px-8 py-2.5 md:py-4 rounded-full font-medium text-sm md:text-lg hover:bg-[#0053ce]/90 transition-all shadow-xl shadow-[#0053ce]/25"
+            className="inline-block text-center bg-[#034f46] text-white px-6 md:px-8 py-2.5 md:py-4 rounded-full font-medium text-sm md:text-lg hover:bg-[#034f46]/90 transition-all shadow-xl shadow-[#034f46]/25"
           >
             Get started
           </a>

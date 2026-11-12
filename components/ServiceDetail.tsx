@@ -46,7 +46,7 @@ function MockupCard({ type }: { type: string }) {
             { label: "Revenue", value: "$48,200", color: "text-green-400" },
             { label: "Expenses", value: "$12,850", color: "text-red-400" },
             { label: "Net Income", value: "$35,350", color: "text-white" },
-            { label: "Cash Balance", value: "$142,000", color: "text-indigo-400" },
+            { label: "Cash Balance", value: "$142,000", color: "text-emerald-400" },
           ].map((row) => (
             <div key={row.label} className="flex justify-between items-center py-2 border-b border-white/5 last:border-0">
               <span className="text-slate-400 text-sm">{row.label}</span>
@@ -65,7 +65,7 @@ function MockupCard({ type }: { type: string }) {
     <div className="card-glass rounded-2xl p-6 w-full max-w-md mx-auto">
       <div className="flex items-center justify-between mb-6">
         <span className="text-white font-medium">Tax Deadlines</span>
-        <span className="text-xs text-indigo-400 bg-indigo-400/10 border border-indigo-400/20 rounded-full px-3 py-1">
+        <span className="text-xs text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 rounded-full px-3 py-1">
           All on track
         </span>
       </div>
@@ -108,7 +108,7 @@ export default function ServiceDetail() {
           >
             {/* Text */}
             <div className="flex-1">
-              <p className="text-indigo-400 text-sm font-medium uppercase tracking-widest mb-3">
+              <p className="text-emerald-400 text-sm font-medium uppercase tracking-widest mb-3">
                 {d.tag}
               </p>
               <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4 leading-tight">
@@ -118,7 +118,7 @@ export default function ServiceDetail() {
               <ul className="space-y-3 mb-8">
                 {d.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-3 text-slate-300">
-                    <svg className="w-5 h-5 text-indigo-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-emerald-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     {b}

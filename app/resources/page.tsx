@@ -70,20 +70,20 @@ export default function ResourcesPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative pt-32 md:pt-40 pb-12 md:pb-16 overflow-hidden bg-gradient-to-b from-[#e3e7ff] via-[#f2f3ff] to-white">
+        <section className="relative pt-32 md:pt-40 pb-12 md:pb-16 overflow-hidden bg-gradient-to-b from-[#e0e8e5] via-[#eef3f1] to-white">
           <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-            <div className="absolute -top-24 -left-24 w-[28rem] h-[28rem] bg-[#0053ce]/25 rounded-full blur-3xl" />
-            <div className="absolute top-32 -right-24 w-[30rem] h-[30rem] bg-[#94a6fe]/40 rounded-full blur-3xl" />
+            <div className="absolute -top-24 -left-24 w-[28rem] h-[28rem] bg-[#034f46]/25 rounded-full blur-3xl" />
+            <div className="absolute top-32 -right-24 w-[30rem] h-[30rem] bg-[#8fc7b8]/40 rounded-full blur-3xl" />
           </div>
           <div className="relative z-10 max-w-[1280px] mx-auto px-5 md:px-6 text-center">
             <div className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-md border border-white/50 px-4 py-2 rounded-full mb-6 shadow-sm">
-              <span className="text-sm font-medium tracking-wide text-[#243889]">Resources</span>
+              <span className="text-sm font-medium tracking-wide text-[#023d35]">Resources</span>
             </div>
-            <h1 className="text-[32px] sm:text-[40px] md:text-[60px] font-medium leading-[1.12] md:leading-[1.1] tracking-[-0.02em] text-[#00174c] max-w-4xl mx-auto mb-5 md:mb-6">
+            <h1 className="text-[32px] sm:text-[40px] md:text-[60px] font-medium leading-[1.12] md:leading-[1.1] tracking-[-0.02em] text-[#1a1a1a] max-w-4xl mx-auto mb-5 md:mb-6">
               Guides to run your{" "}
-              <span className="text-[#0053ce]">business finances.</span>
+              <span className="text-[#034f46]">business finances.</span>
             </h1>
-            <p className="text-base md:text-lg leading-relaxed text-[#727687] max-w-2xl mx-auto">
+            <p className="text-base md:text-lg leading-relaxed text-[#6b7280] max-w-2xl mx-auto">
               Practical guides, templates, and answers on bookkeeping, taxes, payroll, and
               compliance — written by the CPA team that does this every day.
             </p>
@@ -95,17 +95,17 @@ export default function ResourcesPage() {
           <div className="max-w-[1280px] mx-auto px-5 md:px-6">
             <a
               href="#"
-              className="group block bg-[#172d65] text-white rounded-[40px] p-8 md:p-14 overflow-hidden relative"
+              className="group block bg-[#023d35] text-white rounded-[40px] p-8 md:p-14 overflow-hidden relative"
             >
-              <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#0053ce]/40 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#034f46]/40 rounded-full blur-3xl pointer-events-none" />
               <div className="relative z-10 max-w-2xl">
-                <span className="inline-block text-xs font-medium bg-[#94a6fe] text-[#243889] px-3 py-1 rounded-full mb-6">
+                <span className="inline-block text-xs font-medium bg-[#8fc7b8] text-[#023d35] px-3 py-1 rounded-full mb-6">
                   Featured guide
                 </span>
                 <h2 className="text-[26px] md:text-[40px] font-medium leading-[1.2] mb-4">
                   The complete guide to getting tax-ready as a small business
                 </h2>
-                <p className="text-[#dbe1ff]/70 text-base md:text-lg leading-relaxed mb-8">
+                <p className="text-[#e0e8e5]/70 text-base md:text-lg leading-relaxed mb-8">
                   Everything you need before filing — clean books, the right deductions, quarterly
                   estimates, and the documents your accountant actually needs.
                 </p>
@@ -126,10 +126,10 @@ export default function ResourcesPage() {
         </section>
 
         {/* Browse by topic */}
-        <section className="relative py-16 md:py-[120px] overflow-hidden bg-gradient-to-br from-[#172d65] via-[#1f3a82] to-[#0053ce]">
+        <section className="relative py-16 md:py-[120px] overflow-hidden bg-gradient-to-br from-[#023d35] via-[#034f46] to-[#034f46]">
           <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-            <div className="absolute -top-20 right-10 w-[26rem] h-[26rem] bg-[#94a6fe]/30 rounded-full blur-3xl" />
-            <div className="absolute -bottom-24 -left-16 w-[28rem] h-[28rem] bg-[#196bfa]/40 rounded-full blur-3xl" />
+            <div className="absolute -top-20 right-10 w-[26rem] h-[26rem] bg-[#8fc7b8]/30 rounded-full blur-3xl" />
+            <div className="absolute -bottom-24 -left-16 w-[28rem] h-[28rem] bg-[#059669]/40 rounded-full blur-3xl" />
           </div>
           <div className="relative z-10 max-w-[1280px] mx-auto px-5 md:px-6">
             <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-white text-center mb-12">
@@ -152,7 +152,7 @@ export default function ResourcesPage() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-2">{t.title}</h3>
-                  <p className="text-sm text-[#dbe1ff]/80 leading-relaxed">{t.desc}</p>
+                  <p className="text-sm text-[#e0e8e5]/80 leading-relaxed">{t.desc}</p>
                 </div>
               ))}
             </div>
@@ -160,16 +160,16 @@ export default function ResourcesPage() {
         </section>
 
         {/* Resource library (filterable) */}
-        <section className="relative py-16 md:py-[120px] overflow-hidden bg-gradient-to-b from-white via-[#f2f3ff] to-[#e3e7ff]">
+        <section className="relative py-16 md:py-[120px] overflow-hidden bg-gradient-to-b from-white via-[#eef3f1] to-[#e0e8e5]">
           <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-            <div className="absolute top-20 -left-20 w-[26rem] h-[26rem] bg-[#196bfa]/15 rounded-full blur-3xl" />
-            <div className="absolute bottom-10 right-1/4 w-[24rem] h-[24rem] bg-[#94a6fe]/30 rounded-full blur-3xl" />
+            <div className="absolute top-20 -left-20 w-[26rem] h-[26rem] bg-[#059669]/15 rounded-full blur-3xl" />
+            <div className="absolute bottom-10 right-1/4 w-[24rem] h-[24rem] bg-[#8fc7b8]/30 rounded-full blur-3xl" />
           </div>
           <div className="relative z-10 max-w-[1280px] mx-auto px-5 md:px-6">
-            <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#00174c] text-center mb-4">
+            <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#1a1a1a] text-center mb-4">
               The library
             </h2>
-            <p className="text-[#727687] text-lg text-center mb-12 max-w-2xl mx-auto">
+            <p className="text-[#6b7280] text-lg text-center mb-12 max-w-2xl mx-auto">
               Filter by topic to find the guide, article, or template you need.
             </p>
             <ResourceLibrary />
@@ -177,15 +177,15 @@ export default function ResourcesPage() {
         </section>
 
         {/* Newsletter */}
-        <section className="relative pt-16 md:pt-[120px] pb-16 md:pb-[120px] overflow-hidden bg-gradient-to-b from-[#e3e7ff] to-white px-5 md:px-6">
+        <section className="relative pt-16 md:pt-[120px] pb-16 md:pb-[120px] overflow-hidden bg-gradient-to-b from-[#e0e8e5] to-white px-5 md:px-6">
           <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[34rem] h-[20rem] bg-[#94a6fe]/30 rounded-full blur-3xl" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[34rem] h-[20rem] bg-[#8fc7b8]/30 rounded-full blur-3xl" />
           </div>
-          <div className="relative z-10 max-w-[1280px] mx-auto bg-white/50 backdrop-blur-md border border-white/60 rounded-[32px] md:rounded-[48px] p-8 md:p-16 text-center shadow-xl shadow-[#0053ce]/5">
-            <h2 className="text-[26px] md:text-[40px] font-medium leading-[1.2] text-[#00174c] mb-4 max-w-2xl mx-auto">
+          <div className="relative z-10 max-w-[1280px] mx-auto bg-white/50 backdrop-blur-md border border-white/60 rounded-[32px] md:rounded-[48px] p-8 md:p-16 text-center shadow-xl shadow-[#034f46]/5">
+            <h2 className="text-[26px] md:text-[40px] font-medium leading-[1.2] text-[#1a1a1a] mb-4 max-w-2xl mx-auto">
               Finance tips for founders, once a month.
             </h2>
-            <p className="text-[#727687] text-base md:text-lg mb-8 max-w-xl mx-auto">
+            <p className="text-[#6b7280] text-base md:text-lg mb-8 max-w-xl mx-auto">
               Deadlines, deductions, and practical advice — no spam, unsubscribe anytime.
             </p>
             <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -193,11 +193,11 @@ export default function ResourcesPage() {
                 type="email"
                 required
                 placeholder="you@company.com"
-                className="flex-1 px-5 py-3.5 rounded-full bg-white border border-[#c2c6d8]/40 text-[#00174c] placeholder:text-[#727687] outline-none focus:border-[#0053ce] transition-colors"
+                className="flex-1 px-5 py-3.5 rounded-full bg-white border border-[#e0e0e0]/40 text-[#1a1a1a] placeholder:text-[#6b7280] outline-none focus:border-[#034f46] transition-colors"
               />
               <button
                 type="submit"
-                className="bg-[#0053ce] text-white px-7 py-3.5 rounded-full font-medium text-sm hover:bg-[#0053ce]/90 transition-all shadow-lg shadow-[#0053ce]/20 whitespace-nowrap"
+                className="bg-[#034f46] text-white px-7 py-3.5 rounded-full font-medium text-sm hover:bg-[#034f46]/90 transition-all shadow-lg shadow-[#034f46]/20 whitespace-nowrap"
               >
                 Subscribe
               </button>

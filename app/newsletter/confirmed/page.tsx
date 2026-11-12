@@ -49,21 +49,21 @@ export default async function NewsletterConfirmedPage({ searchParams }: Props) {
 
   return (
     <main className="mx-auto flex min-h-[60vh] max-w-xl flex-col justify-center px-6 py-24">
-      <h1 className="text-3xl font-semibold text-[#00174c]">{copy.heading}</h1>
+      <h1 className="text-3xl font-semibold text-[#1a1a1a]">{copy.heading}</h1>
       <p className="mt-4 text-base leading-relaxed text-[#4a4f63]">
         {copy.body}
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
         <Link
           href="/"
-          className="rounded-xl bg-[#0053ce] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#196bfa]"
+          className="rounded-xl bg-[#034f46] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#059669]"
         >
           Back to Ace Global
         </Link>
         {copy.tone === "good" && (
           <Link
             href="/blog"
-            className="rounded-xl border border-[#d5d8e2] px-6 py-3 text-sm font-medium text-[#00174c] transition-colors hover:bg-[#f4f5f8]"
+            className="rounded-xl border border-[#d5d8e2] px-6 py-3 text-sm font-medium text-[#1a1a1a] transition-colors hover:bg-[#f3f4f6]"
           >
             Read the blog
           </Link>

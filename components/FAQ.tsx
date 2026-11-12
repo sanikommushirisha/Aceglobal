@@ -8,15 +8,15 @@ import { faqs, faqPageJsonLd } from "@/lib/faqs";
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="py-8 border-b border-[#c2c6d8]/30 last:border-0">
+    <div className="py-8 border-b border-[#e0e0e0]/30 last:border-0">
       <button
         className="flex justify-between items-center w-full text-left"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
       >
-        <span className="text-lg md:text-2xl font-medium text-[#00174c]">{q}</span>
+        <span className="text-lg md:text-2xl font-medium text-[#1a1a1a]">{q}</span>
         <span
-          className={`ml-4 flex-shrink-0 text-[#727687] transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`ml-4 flex-shrink-0 text-[#6b7280] transition-transform duration-200 ${open ? "rotate-180" : ""}`}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -24,7 +24,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         </span>
       </button>
       {open && (
-        <div className="mt-4 text-[#727687] text-lg leading-relaxed">{a}</div>
+        <div className="mt-4 text-[#6b7280] text-lg leading-relaxed">{a}</div>
       )}
     </div>
   );
@@ -40,13 +40,13 @@ export default function FAQ() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Sticky CTA card */}
           <div className="lg:col-span-5">
-            <div className="bg-[#172d65] text-white p-8 md:p-12 rounded-[32px] md:rounded-[40px] sticky top-32">
+            <div className="bg-[#023d35] text-white p-8 md:p-12 rounded-[32px] md:rounded-[40px] sticky top-32">
               <h2 className="text-3xl font-medium mb-6">Have more questions?</h2>
-              <p className="text-[#dbe1ff]/60 mb-10 leading-relaxed">
+              <p className="text-[#e0e8e5]/60 mb-10 leading-relaxed">
                 We&apos;re here to help you simplify your business finances. Talk to an Ace Global
                 expert today about bookkeeping, payroll, taxes, and compliance.
               </p>
-              <button className="bg-white text-[#172d65] px-8 py-4 rounded-full font-medium hover:bg-[#f2f3ff] transition-colors w-full">
+              <button className="bg-white text-[#023d35] px-8 py-4 rounded-full font-medium hover:bg-[#eef3f1] transition-colors w-full">
                 Chat with Sales
               </button>
             </div>

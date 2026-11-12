@@ -49,7 +49,7 @@ function PostCardItem({ post }: { post: PostCard }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group flex flex-col">
       {/* Cover image (or branded gradient placeholder) */}
-      <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-gradient-to-br from-[#e3e7ff] via-[#eef0ff] to-[#cdd6ff]">
+      <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-gradient-to-br from-[#e0e8e5] via-[#eef3f1] to-[#a7d7c9]">
         {img ? (
           <Image
             src={img}
@@ -62,7 +62,7 @@ function PostCardItem({ post }: { post: PostCard }) {
         {post.categories?.[0] ? (
           /* Bottom-right, not top-left: cover artwork carries the Ace Global
              logo in its top-left corner and the pill was sitting on top of it. */
-          <span className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm text-[#0053ce] text-xs font-medium px-3 py-1.5 rounded-full shadow-sm">
+          <span className="absolute z-[2] bottom-4 right-4 bg-white/90 backdrop-blur-sm text-[#034f46] text-xs font-medium px-3 py-1.5 rounded-full shadow-sm">
             {post.categories[0].title}
           </span>
         ) : null}
@@ -70,12 +70,12 @@ function PostCardItem({ post }: { post: PostCard }) {
 
       {/* Meta + title */}
       <div className="mt-5 flex flex-col flex-1">
-        <p className="text-sm text-[#727687] mb-2">
+        <p className="text-sm text-[#6b7280] mb-2">
           {formatDate(post.publishedAt)}
           {post.publishedAt ? " · " : ""}
           {readTime} min read
         </p>
-        <h3 className="text-lg md:text-xl font-semibold text-[#00174c] leading-snug group-hover:text-[#0053ce] transition-colors">
+        <h3 className="text-lg md:text-xl font-semibold text-[#1a1a1a] leading-snug group-hover:text-[#034f46] transition-colors">
           {post.title}
         </h3>
 
@@ -91,11 +91,11 @@ function PostCardItem({ post }: { post: PostCard }) {
                 className="w-7 h-7 rounded-full object-cover"
               />
             ) : (
-              <span className="w-7 h-7 rounded-full bg-[#0053ce]/10 text-[#0053ce] text-xs font-semibold flex items-center justify-center">
+              <span className="w-7 h-7 rounded-full bg-[#034f46]/10 text-[#034f46] text-xs font-semibold flex items-center justify-center">
                 {author.name.charAt(0)}
               </span>
             )}
-            <span className="text-sm font-medium text-[#00174c]">{author.name}</span>
+            <span className="text-sm font-medium text-[#1a1a1a]">{author.name}</span>
           </div>
         ) : null}
       </div>
@@ -107,9 +107,9 @@ function EmptyState() {
   return (
     <section className="py-16 md:py-28 bg-white">
       <div className="max-w-[640px] mx-auto px-5 md:px-6 text-center">
-        <div className="w-14 h-14 rounded-2xl bg-[#0053ce]/10 flex items-center justify-center mx-auto mb-6">
+        <div className="w-14 h-14 rounded-2xl bg-[#034f46]/10 flex items-center justify-center mx-auto mb-6">
           <svg
-            className="w-7 h-7 text-[#0053ce]"
+            className="w-7 h-7 text-[#034f46]"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -122,10 +122,10 @@ function EmptyState() {
             />
           </svg>
         </div>
-        <h2 className="text-[24px] md:text-[30px] font-medium text-[#00174c] mb-3">
+        <h2 className="text-[24px] md:text-[30px] font-medium text-[#1a1a1a] mb-3">
           No posts published yet
         </h2>
-        <p className="text-[#727687] leading-relaxed">
+        <p className="text-[#6b7280] leading-relaxed">
           Our first articles on bookkeeping, taxes, payroll, and compliance are on
           the way. Check back soon.
         </p>
@@ -148,8 +148,8 @@ function categoriesOf(posts: PostCard[]) {
 function NoMatches({ label }: { label: string }) {
   return (
     <div className="col-span-full py-16 text-center">
-      <p className="text-[#00174c] font-medium mb-1">Nothing filed under “{label}” yet.</p>
-      <Link href="/blog" className="text-sm text-[#0053ce] hover:underline">
+      <p className="text-[#1a1a1a] font-medium mb-1">Nothing filed under “{label}” yet.</p>
+      <Link href="/blog" className="text-sm text-[#034f46] hover:underline">
         View all articles
       </Link>
     </div>
@@ -180,8 +180,8 @@ export default async function BlogPage({
       className={
         "px-4 py-2 rounded-full text-sm font-medium border transition-colors " +
         (isActive
-          ? "bg-[#00174c] text-white border-[#00174c]"
-          : "bg-white text-[#424655] border-[#e3e6ef] hover:border-[#0053ce] hover:text-[#0053ce]")
+          ? "bg-[#1a1a1a] text-white border-[#1a1a1a]"
+          : "bg-white text-[#374151] border-[#e5e7eb] hover:border-[#034f46] hover:text-[#034f46]")
       }
     >
       {label}
@@ -200,16 +200,16 @@ export default async function BlogPage({
           <div className="max-w-[1280px] mx-auto px-5 md:px-6">
             <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
               <div>
-                <h1 className="text-[34px] md:text-[46px] font-medium leading-[1.1] tracking-[-0.02em] text-[#00174c]">
+                <h1 className="text-[34px] md:text-[46px] font-medium leading-[1.1] tracking-[-0.02em] text-[#1a1a1a]">
                   {activeCategory ? activeCategory.title : "Blog"}
                 </h1>
-                <p className="mt-3 text-base md:text-lg leading-relaxed text-[#727687] max-w-2xl">
+                <p className="mt-3 text-base md:text-lg leading-relaxed text-[#6b7280] max-w-2xl">
                   Practical takes on bookkeeping, corporate taxes, payroll, and
                   compliance — from the CPA team that handles it every day.
                 </p>
               </div>
               {posts.length > 0 && (
-                <p className="text-sm text-[#727687] pb-1">
+                <p className="text-sm text-[#6b7280] pb-1">
                   {visible.length} {visible.length === 1 ? "article" : "articles"}
                 </p>
               )}

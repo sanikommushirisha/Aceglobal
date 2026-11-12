@@ -25,7 +25,7 @@ export default function TestimonialCards() {
   return (
     <section className="py-16 md:py-[120px] bg-white overflow-x-auto">
       <div className="max-w-[1280px] mx-auto px-5 md:px-6">
-        <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#00174c] mb-12">
+        <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#1a1a1a] mb-12">
           Saving small business owners real money
         </h2>
         <div className="flex gap-8 pb-8">
@@ -43,10 +43,10 @@ export default function TestimonialCards() {
                 className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
               />
               {/* Bottom overlay for text legibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#00174c] via-[#00174c]/20 to-transparent opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/20 to-transparent opacity-80" />
               {/* Content */}
               <div className="absolute bottom-8 left-8">
-                <div className="bg-[#0053ce] px-4 py-2 rounded-full text-white text-sm font-medium mb-4 inline-block shadow-lg">
+                <div className="bg-[#034f46] px-4 py-2 rounded-full text-white text-sm font-medium mb-4 inline-block shadow-lg">
                   {c.saved}
                 </div>
                 <p className="text-white text-2xl font-medium mb-1">{c.name}</p>

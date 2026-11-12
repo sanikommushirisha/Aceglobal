@@ -12,7 +12,7 @@ function SocialCard({
     <a
       href="#"
       aria-label={label}
-      className="bg-white/[0.06] rounded-3xl flex items-center justify-center h-28 md:h-auto text-white hover:text-[#b2c5ff] hover:bg-white/10 transition-colors"
+      className="bg-white/[0.06] rounded-3xl flex items-center justify-center h-28 md:h-auto text-white hover:text-[#a7d7c9] hover:bg-white/10 transition-colors"
     >
       {children}
     </a>
@@ -34,7 +34,7 @@ function LinkCard({
           <li key={item.label}>
             <Link
               href={item.href}
-              className="text-[#dbe1ff]/60 hover:text-white text-sm transition-colors leading-relaxed"
+              className="text-[#e0e8e5]/60 hover:text-white text-sm transition-colors leading-relaxed"
             >
               {item.label}
             </Link>
@@ -47,7 +47,7 @@ function LinkCard({
 
 export default function Footer() {
   return (
-    <footer className="bg-[#172d65] pt-12 pb-12">
+    <footer className="bg-[#023d35] pt-12 pb-12">
       <div className="max-w-[1280px] mx-auto px-5 md:px-6 space-y-5">
         {/* Newsletter card */}
         <div className="bg-white/[0.06] rounded-3xl p-8 md:p-10">
@@ -55,7 +55,7 @@ export default function Footer() {
             <h3 className="text-2xl md:text-3xl font-semibold text-white mb-3">
               Join our newsletter
             </h3>
-            <p className="text-[#dbe1ff]/70 text-sm mb-6 max-w-md">
+            <p className="text-[#e0e8e5]/70 text-sm mb-6 max-w-md">
               Get practical tax, bookkeeping, payroll, and compliance tips for small business
               owners.
             </p>
@@ -70,11 +70,11 @@ export default function Footer() {
               Ace Global
             </Link>
             <span className="hidden sm:block w-px h-10 bg-white/20" />
-            <p className="text-[#dbe1ff]/70 text-base">
+            <p className="text-[#e0e8e5]/70 text-base">
               Bookkeeping, tax, payroll, and compliance for small businesses
             </p>
             <div className="sm:ml-auto">
-              <span className="inline-flex items-center gap-2 border border-green-400/50 text-[#00174c] rounded-lg px-4 py-2.5 text-sm bg-white">
+              <span className="inline-flex items-center gap-2 border border-green-400/50 text-[#1a1a1a] rounded-lg px-4 py-2.5 text-sm bg-white">
                 Review us <span className="text-green-500">★</span>
                 <span className="font-semibold">Trustpilot</span>
               </span>
@@ -125,14 +125,14 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-6 space-y-3">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3">
-            <p className="text-[#dbe1ff]/40 text-xs">
+            <p className="text-[#e0e8e5]/40 text-xs">
               © {new Date().getFullYear()} Ace Global. All rights reserved.
             </p>
-            <p className="text-[#dbe1ff]/40 text-xs">
+            <p className="text-[#e0e8e5]/40 text-xs">
               Books, taxes, payroll, and compliance — handled for small businesses.
             </p>
           </div>
-          <p className="text-[#dbe1ff]/30 text-xs text-center">
+          <p className="text-[#e0e8e5]/30 text-xs text-center">
             Built for small business owners who want clean books, timely taxes, and fewer
             surprises.
           </p>

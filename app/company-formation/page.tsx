@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const features = [
   {
     tag: "Pick the right entity",
-    tagStyle: "bg-[#0053ce]/10 text-[#0053ce]",
+    tagStyle: "bg-[#034f46]/10 text-[#034f46]",
     title: "The right structure for how you'll actually grow.",
     desc: "LLC, S-Corp election, or Delaware C-Corp? We walk you through liability, taxes, and fundraising so you incorporate once — and don't pay to restructure later.",
     bullets: [
@@ -38,7 +38,7 @@ const features = [
   },
   {
     tag: "Stay compliant",
-    tagStyle: "bg-[#94a6fe]/20 text-[#243889]",
+    tagStyle: "bg-[#8fc7b8]/20 text-[#023d35]",
     title: "Registered agent and compliance, on autopilot.",
     desc: "Registered agent service, annual reports, and franchise tax tracked from the start — with your AI agent flagging every deadline before it hits.",
     bullets: [
@@ -51,10 +51,10 @@ const features = [
 
 function FormationMockup() {
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-6 border border-[#c2c6d8]/20 max-w-md w-full mx-auto">
+    <div className="bg-white rounded-2xl shadow-lg p-6 border border-[#e0e0e0]/20 max-w-md w-full mx-auto">
       <div className="flex items-center justify-between mb-6">
-        <p className="text-sm font-medium text-[#00174c]">Formation Status</p>
-        <span className="text-xs bg-blue-100 text-[#0053ce] px-2 py-1 rounded-full font-medium">
+        <p className="text-sm font-medium text-[#1a1a1a]">Formation Status</p>
+        <span className="text-xs bg-emerald-100 text-[#034f46] px-2 py-1 rounded-full font-medium">
           In progress
         </span>
       </div>
@@ -67,9 +67,9 @@ function FormationMockup() {
       ].map((row) => (
         <div
           key={row.label}
-          className="flex justify-between items-center py-3 border-b border-[#c2c6d8]/20 last:border-0"
+          className="flex justify-between items-center py-3 border-b border-[#e0e0e0]/20 last:border-0"
         >
-          <span className="text-sm text-[#424655]">{row.label}</span>
+          <span className="text-sm text-[#374151]">{row.label}</span>
           <span
             className={`text-xs rounded-full px-3 py-1 font-medium ${
               row.ok ? "bg-green-100 text-green-700" : "bg-yellow-100 text-yellow-700"
@@ -79,7 +79,7 @@ function FormationMockup() {
           </span>
         </div>
       ))}
-      <div className="mt-4 pt-4 border-t border-[#c2c6d8]/20 flex items-center gap-2 text-xs text-[#727687]">
+      <div className="mt-4 pt-4 border-t border-[#e0e0e0]/20 flex items-center gap-2 text-xs text-[#6b7280]">
         <span className="w-2 h-2 rounded-full bg-green-400" />
         Handled by your formation specialist
       </div>
@@ -94,51 +94,51 @@ export default function CompanyFormationPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 overflow-hidden bg-gradient-to-b from-[#e3e7ff] via-[#f2f3ff] to-white">
+        <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 overflow-hidden bg-gradient-to-b from-[#e0e8e5] via-[#eef3f1] to-white">
           <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-            <div className="absolute -top-24 -left-24 w-[28rem] h-[28rem] bg-[#0053ce]/25 rounded-full blur-3xl" />
-            <div className="absolute top-32 -right-24 w-[30rem] h-[30rem] bg-[#94a6fe]/40 rounded-full blur-3xl" />
+            <div className="absolute -top-24 -left-24 w-[28rem] h-[28rem] bg-[#034f46]/25 rounded-full blur-3xl" />
+            <div className="absolute top-32 -right-24 w-[30rem] h-[30rem] bg-[#8fc7b8]/40 rounded-full blur-3xl" />
           </div>
           <div className="relative z-10 max-w-[1280px] mx-auto px-5 md:px-6 text-center">
             <div className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-md border border-white/50 px-4 py-2 rounded-full mb-6 shadow-sm">
-              <span className="text-sm font-medium tracking-wide text-[#243889]">
+              <span className="text-sm font-medium tracking-wide text-[#023d35]">
                 Company Formation
               </span>
             </div>
-            <h1 className="text-[32px] sm:text-[40px] md:text-[60px] font-medium leading-[1.12] md:leading-[1.1] tracking-[-0.02em] text-[#00174c] max-w-4xl mx-auto mb-5 md:mb-6">
+            <h1 className="text-[32px] sm:text-[40px] md:text-[60px] font-medium leading-[1.12] md:leading-[1.1] tracking-[-0.02em] text-[#1a1a1a] max-w-4xl mx-auto mb-5 md:mb-6">
               Form your company —{" "}
-              <span className="text-[#0053ce]">incorporated, compliant, and ready to operate.</span>
+              <span className="text-[#034f46]">incorporated, compliant, and ready to operate.</span>
             </h1>
-            <p className="text-base md:text-lg leading-relaxed text-[#727687] max-w-2xl mx-auto mb-8 md:mb-12">
+            <p className="text-base md:text-lg leading-relaxed text-[#6b7280] max-w-2xl mx-auto mb-8 md:mb-12">
               From choosing the right entity to your EIN, registered agent, and first compliance
               filing — your CPA team and AI agent handle it end to end.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-4">
               <a
                 href="https://app.aceglobal.ai/"
-                className="inline-block text-center bg-[#0053ce] text-white px-6 md:px-8 py-2.5 md:py-4 rounded-full font-medium text-sm md:text-lg hover:bg-[#0053ce]/90 transition-all shadow-xl shadow-[#0053ce]/25"
+                className="inline-block text-center bg-[#034f46] text-white px-6 md:px-8 py-2.5 md:py-4 rounded-full font-medium text-sm md:text-lg hover:bg-[#034f46]/90 transition-all shadow-xl shadow-[#034f46]/25"
               >
                 Start your company
               </a>
             </div>
-            <p className="text-xs text-[#727687]">
+            <p className="text-xs text-[#6b7280]">
               No legal fees · Cancel anytime · Most companies formed in days
             </p>
           </div>
         </section>
 
         {/* What's included — 3 feature cards (glass) */}
-        <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-b from-white via-[#f2f3ff] to-[#e3e7ff]">
+        <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-b from-white via-[#eef3f1] to-[#e0e8e5]">
           <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-            <div className="absolute top-10 left-1/4 w-[26rem] h-[26rem] bg-[#196bfa]/15 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 right-10 w-[24rem] h-[24rem] bg-[#94a6fe]/30 rounded-full blur-3xl" />
+            <div className="absolute top-10 left-1/4 w-[26rem] h-[26rem] bg-[#059669]/15 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-10 w-[24rem] h-[24rem] bg-[#8fc7b8]/30 rounded-full blur-3xl" />
           </div>
           <div className="relative z-10 max-w-[1280px] mx-auto px-5 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#00174c] mb-3">
+              <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#1a1a1a] mb-3">
                 Everything you need to start, in one place.
               </h2>
-              <p className="text-[#727687] text-lg max-w-xl mx-auto">
+              <p className="text-[#6b7280] text-lg max-w-xl mx-auto">
                 Incorporation, tax setup, and compliance — no scattered registrations or surprise filings.
               </p>
             </div>
@@ -159,15 +159,15 @@ export default function CompanyFormationPage() {
               ].map((c) => (
                 <div
                   key={c.title}
-                  className="bg-white/55 backdrop-blur-md border border-white/60 rounded-3xl p-8 flex flex-col shadow-xl shadow-[#0053ce]/5"
+                  className="bg-white/55 backdrop-blur-md border border-white/60 rounded-3xl p-8 flex flex-col shadow-xl shadow-[#034f46]/5"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#0053ce]/10 flex items-center justify-center text-[#0053ce] mb-5">
+                  <div className="w-12 h-12 rounded-xl bg-[#034f46]/10 flex items-center justify-center text-[#034f46] mb-5">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0h2m-2 0h-4M5 21H3m2 0h4M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-4a1 1 0 011-1h2a1 1 0 011 1v4" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-medium text-[#00174c] mb-2">{c.title}</h3>
-                  <p className="text-[#727687] text-sm leading-relaxed">{c.desc}</p>
+                  <h3 className="text-xl font-medium text-[#1a1a1a] mb-2">{c.title}</h3>
+                  <p className="text-[#6b7280] text-sm leading-relaxed">{c.desc}</p>
                 </div>
               ))}
             </div>
@@ -175,13 +175,13 @@ export default function CompanyFormationPage() {
         </section>
 
         {/* Entity comparison cards */}
-        <section className="py-16 md:py-24 bg-[#f2f3ff]">
+        <section className="py-16 md:py-24 bg-[#eef3f1]">
           <div className="max-w-[1280px] mx-auto px-5 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#00174c] mb-3">
+              <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#1a1a1a] mb-3">
                 Not sure which entity to choose?
               </h2>
-              <p className="text-[#727687] text-lg max-w-xl mx-auto">
+              <p className="text-[#6b7280] text-lg max-w-xl mx-auto">
                 We help you weigh liability, taxes, and fundraising before you file.
               </p>
             </div>
@@ -205,11 +205,11 @@ export default function CompanyFormationPage() {
               ].map((c) => (
                 <div
                   key={c.type}
-                  className="bg-white rounded-3xl p-8 flex flex-col border border-[#c2c6d8]/20 shadow-sm"
+                  className="bg-white rounded-3xl p-8 flex flex-col border border-[#e0e0e0]/20 shadow-sm"
                 >
-                  <h3 className="text-2xl font-semibold text-[#00174c] mb-1">{c.type}</h3>
-                  <p className="text-sm font-medium text-[#0053ce] mb-4">{c.best}</p>
-                  <p className="text-[#727687] text-sm leading-relaxed">{c.desc}</p>
+                  <h3 className="text-2xl font-semibold text-[#1a1a1a] mb-1">{c.type}</h3>
+                  <p className="text-sm font-medium text-[#034f46] mb-4">{c.best}</p>
+                  <p className="text-[#6b7280] text-sm leading-relaxed">{c.desc}</p>
                 </div>
               ))}
             </div>
@@ -217,20 +217,20 @@ export default function CompanyFormationPage() {
         </section>
 
         {/* Bento grid */}
-        <section className="py-16 md:py-[120px] bg-[#f2f3ff]">
+        <section className="py-16 md:py-[120px] bg-[#eef3f1]">
           <div className="max-w-[1280px] mx-auto px-5 md:px-6">
-            <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] tracking-[-0.01em] text-[#00174c] text-center mb-12">
+            <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] tracking-[-0.01em] text-[#1a1a1a] text-center mb-12">
               Incorporated right, compliant from day one.
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:h-[620px]">
               {/* Formation specialists */}
-              <div className="md:col-span-7 bg-white p-8 rounded-3xl shadow-sm border border-[#c2c6d8]/20 flex flex-col justify-between overflow-hidden group">
+              <div className="md:col-span-7 bg-white p-8 rounded-3xl shadow-sm border border-[#e0e0e0]/20 flex flex-col justify-between overflow-hidden group">
                 <div>
-                  <h3 className="text-2xl font-medium text-[#00174c] mb-2">
+                  <h3 className="text-2xl font-medium text-[#1a1a1a] mb-2">
                     Dedicated formation specialists
                   </h3>
-                  <p className="text-[#727687]">
+                  <p className="text-[#6b7280]">
                     Specialists and CPAs who pick the right entity, file your paperwork, and hand you
                     a company that&apos;s ready to bank, hire, and raise — without the legal bill.
                   </p>
@@ -243,17 +243,17 @@ export default function CompanyFormationPage() {
                       alt="Formation specialist"
                       width={64}
                       height={64}
-                      className="w-16 h-16 rounded-full object-cover border-4 border-[#ebedff]"
+                      className="w-16 h-16 rounded-full object-cover border-4 border-[#e8f5f3]"
                     />
                   ))}
-                  <div className="w-16 h-16 rounded-full bg-[#0053ce]/10 flex items-center justify-center text-[#0053ce] font-semibold text-sm">
+                  <div className="w-16 h-16 rounded-full bg-[#034f46]/10 flex items-center justify-center text-[#034f46] font-semibold text-sm">
                     +8
                   </div>
                 </div>
               </div>
 
               {/* Companies formed stat */}
-              <div className="md:col-span-5 bg-[#0053ce] p-8 rounded-3xl shadow-lg flex flex-col justify-between text-white relative overflow-hidden">
+              <div className="md:col-span-5 bg-[#034f46] p-8 rounded-3xl shadow-lg flex flex-col justify-between text-white relative overflow-hidden">
                 <div className="relative z-10">
                   <h3 className="text-2xl font-medium mb-2">Companies formed</h3>
                   <p className="opacity-80">
@@ -274,16 +274,16 @@ export default function CompanyFormationPage() {
               </div>
 
               {/* Formation autopilot wide card */}
-              <div className="md:col-span-12 bg-[#172d65] text-white p-8 rounded-3xl shadow-sm flex flex-col md:flex-row items-center gap-8 group">
+              <div className="md:col-span-12 bg-[#023d35] text-white p-8 rounded-3xl shadow-sm flex flex-col md:flex-row items-center gap-8 group">
                 <div className="flex-1">
                   <h3 className="text-2xl font-medium mb-2">Compliance on autopilot</h3>
-                  <p className="text-[#dbe1ff]/60">
+                  <p className="text-[#e0e8e5]/60">
                     The day you incorporate, your AI agent starts tracking annual reports, franchise
                     tax, and beneficial-ownership deadlines — and books are ready the moment you bill.
                   </p>
                 </div>
                 <div className="w-full md:w-80 bg-white/10 rounded-2xl p-5 group-hover:scale-[1.02] transition-transform">
-                  <p className="text-xs font-medium text-[#b2c5ff] mb-3 uppercase tracking-wider">
+                  <p className="text-xs font-medium text-[#a7d7c9] mb-3 uppercase tracking-wider">
                     Formation Checklist
                   </p>
                   {[
@@ -311,7 +311,7 @@ export default function CompanyFormationPage() {
         </section>
 
         {/* Feature rows */}
-        <section className="py-16 md:py-[120px] bg-[#f2f3ff] overflow-hidden">
+        <section className="py-16 md:py-[120px] bg-[#eef3f1] overflow-hidden">
           <div className="max-w-[1280px] mx-auto px-5 md:px-6 space-y-24">
             {features.map((f, i) => (
               <div
@@ -324,15 +324,15 @@ export default function CompanyFormationPage() {
                   >
                     {f.tag}
                   </span>
-                  <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#00174c] mb-6">
+                  <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#1a1a1a] mb-6">
                     {f.title}
                   </h2>
-                  <p className="text-lg text-[#727687] mb-8 leading-relaxed">{f.desc}</p>
+                  <p className="text-lg text-[#6b7280] mb-8 leading-relaxed">{f.desc}</p>
                   <ul className="space-y-3">
                     {f.bullets.map((b) => (
-                      <li key={b} className="flex items-center gap-3 text-[#00174c]">
+                      <li key={b} className="flex items-center gap-3 text-[#1a1a1a]">
                         <svg
-                          className="w-5 h-5 text-[#0053ce] shrink-0"
+                          className="w-5 h-5 text-[#034f46] shrink-0"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -361,20 +361,20 @@ export default function CompanyFormationPage() {
         <section className="py-16 md:py-[120px] bg-white">
           <div className="max-w-[1100px] mx-auto px-5 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#00174c] mb-3">
+              <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] text-[#1a1a1a] mb-3">
                 Ace Global vs. the alternatives
               </h2>
-              <p className="text-[#727687] text-lg">
+              <p className="text-[#6b7280] text-lg">
                 A modern formation team vs. filing services and law firms.
               </p>
             </div>
 
-            <div className="overflow-hidden rounded-3xl border border-[#c2c6d8]/30 shadow-sm">
-              <div className="grid grid-cols-4 bg-[#172d65] text-white text-sm font-medium">
+            <div className="overflow-hidden rounded-3xl border border-[#e0e0e0]/30 shadow-sm">
+              <div className="grid grid-cols-4 bg-[#023d35] text-white text-sm font-medium">
                 <div className="p-4 md:p-5" />
-                <div className="p-4 md:p-5 text-center bg-[#0053ce]">Ace Global</div>
-                <div className="p-4 md:p-5 text-center text-[#dbe1ff]/80">Filing service</div>
-                <div className="p-4 md:p-5 text-center text-[#dbe1ff]/80">Law firm</div>
+                <div className="p-4 md:p-5 text-center bg-[#034f46]">Ace Global</div>
+                <div className="p-4 md:p-5 text-center text-[#e0e8e5]/80">Filing service</div>
+                <div className="p-4 md:p-5 text-center text-[#e0e8e5]/80">Law firm</div>
               </div>
               {[
                 ["Entity selection guidance", true, false, true],
@@ -388,9 +388,9 @@ export default function CompanyFormationPage() {
               ].map((row, i) => (
                 <div
                   key={row[0] as string}
-                  className={`grid grid-cols-4 text-sm ${i % 2 ? "bg-[#f2f3ff]" : "bg-white"}`}
+                  className={`grid grid-cols-4 text-sm ${i % 2 ? "bg-[#eef3f1]" : "bg-white"}`}
                 >
-                  <div className="p-4 md:p-5 text-[#00174c] font-medium">{row[0]}</div>
+                  <div className="p-4 md:p-5 text-[#1a1a1a] font-medium">{row[0]}</div>
                   {[row[1], row[2], row[3]].map((v, j) => (
                     <div key={j} className="p-4 md:p-5 flex items-center justify-center">
                       {v ? (
@@ -400,7 +400,7 @@ export default function CompanyFormationPage() {
                           </svg>
                         </span>
                       ) : (
-                        <span className="w-6 h-6 rounded-full bg-[#c2c6d8]/30 flex items-center justify-center text-[#727687]">
+                        <span className="w-6 h-6 rounded-full bg-[#e0e0e0]/30 flex items-center justify-center text-[#6b7280]">
                           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
                           </svg>
@@ -415,9 +415,9 @@ export default function CompanyFormationPage() {
         </section>
 
         {/* Testimonials strip */}
-        <section className="py-16 md:py-[120px] bg-[#f2f3ff]">
+        <section className="py-16 md:py-[120px] bg-[#eef3f1]">
           <div className="max-w-[1280px] mx-auto px-5 md:px-6">
-            <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] tracking-[-0.01em] text-[#00174c] text-center mb-12 max-w-2xl mx-auto">
+            <h2 className="text-[28px] md:text-[40px] font-medium leading-[1.2] tracking-[-0.01em] text-[#1a1a1a] text-center mb-12 max-w-2xl mx-auto">
               &ldquo;Incorporated in days, compliant ever since.&rdquo;
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -428,7 +428,7 @@ export default function CompanyFormationPage() {
                   name: "Maya Robinson",
                   role: "Founder, Northwind Goods",
                   initials: "MR",
-                  color: "bg-[#0053ce]",
+                  color: "bg-[#034f46]",
                 },
                 {
                   quote:
@@ -436,7 +436,7 @@ export default function CompanyFormationPage() {
                   name: "Diego Alvarez",
                   role: "CEO, Lumen Labs",
                   initials: "DA",
-                  color: "bg-[#172d65]",
+                  color: "bg-[#023d35]",
                 },
                 {
                   quote:
@@ -444,26 +444,26 @@ export default function CompanyFormationPage() {
                   name: "Hannah Patel",
                   role: "Owner, Patel Studio",
                   initials: "HP",
-                  color: "bg-[#4658aa]",
+                  color: "bg-[#034f46]",
                 },
               ].map((t) => (
                 <div
                   key={t.name}
-                  className="bg-white rounded-2xl p-6 shadow-sm border border-[#c2c6d8]/20 flex flex-col gap-4"
+                  className="bg-white rounded-2xl p-6 shadow-sm border border-[#e0e0e0]/20 flex flex-col gap-4"
                 >
                   <div className="flex text-yellow-400 text-sm">{"★★★★★"}</div>
-                  <p className="text-[#424655] text-sm leading-relaxed flex-1">
+                  <p className="text-[#374151] text-sm leading-relaxed flex-1">
                     &ldquo;{t.quote}&rdquo;
                   </p>
-                  <div className="flex items-center gap-3 pt-2 border-t border-[#c2c6d8]/20">
+                  <div className="flex items-center gap-3 pt-2 border-t border-[#e0e0e0]/20">
                     <div
                       className={`w-9 h-9 rounded-full ${t.color} flex items-center justify-center text-white text-xs font-semibold shrink-0`}
                     >
                       {t.initials}
                     </div>
                     <div>
-                      <p className="text-[#00174c] text-sm font-medium">{t.name}</p>
-                      <p className="text-[#727687] text-xs">{t.role}</p>
+                      <p className="text-[#1a1a1a] text-sm font-medium">{t.name}</p>
+                      <p className="text-[#6b7280] text-xs">{t.role}</p>
                     </div>
                   </div>
                 </div>

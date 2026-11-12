@@ -3,10 +3,14 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { isProduction, SITE_NAME, SITE_URL } from "@/lib/site-env";
 import "./globals.css";
 
+// No `weight` list: Plus Jakarta Sans is a variable font, so omitting it loads
+// the one variable file (every weight, 200–800). Listing weights can make Google
+// serve /l/font?kit=… URLs, which Turbopack cannot resolve ("next/font/google
+// queries have exactly one entry") and the dev server fails to compile.
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-jakarta",
+  display: "swap",
 });
 
 // Only the production deployment is indexable; staging and preview carry a
@@ -38,7 +42,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${jakarta.variable} scroll-smooth`}>
-      <body className="bg-[#faf8ff] text-[#00174c] font-sans antialiased">
+      <body className="bg-[#faf8f0] text-[#1a1a1a] font-sans antialiased">
         {children}
       </body>
     </html>

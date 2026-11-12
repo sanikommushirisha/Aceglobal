@@ -35,12 +35,12 @@ export default function NewsletterForm() {
           required
           placeholder="Enter your email"
           aria-label="Email address"
-          className="flex-1 bg-white rounded-xl px-4 py-3.5 text-sm text-[#00174c] placeholder:text-[#727687] focus:outline-none focus:ring-2 focus:ring-[#0053ce]/40"
+          className="flex-1 bg-white rounded-xl px-4 py-3.5 text-sm text-[#1a1a1a] placeholder:text-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#034f46]/40"
         />
         <button
           type="submit"
           disabled={pending}
-          className="bg-[#0053ce] text-white px-7 py-3.5 rounded-xl text-sm font-medium hover:bg-[#196bfa] transition-colors disabled:opacity-60"
+          className="bg-[#034f46] text-white px-7 py-3.5 rounded-xl text-sm font-medium hover:bg-[#059669] transition-colors disabled:opacity-60"
         >
           {pending ? "Submitting…" : "Subscribe"}
         </button>

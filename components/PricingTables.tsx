@@ -63,7 +63,7 @@ const plans: Plan[] = [
 function Check() {
   return (
     <svg
-      className="w-5 h-5 text-[#0053ce] shrink-0 mt-0.5"
+      className="w-5 h-5 text-[#034f46] shrink-0 mt-0.5"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -81,7 +81,7 @@ export default function PricingTables() {
       {/* Billing toggle */}
       <div className="flex items-center justify-center gap-4 mb-12">
         <span
-          className={`text-sm font-medium ${annual ? "text-[#727687]" : "text-[#00174c]"}`}
+          className={`text-sm font-medium ${annual ? "text-[#6b7280]" : "text-[#1a1a1a]"}`}
         >
           Monthly
         </span>
@@ -90,7 +90,7 @@ export default function PricingTables() {
           role="switch"
           aria-checked={annual}
           onClick={() => setAnnual(!annual)}
-          className="relative w-14 h-8 rounded-full bg-[#0053ce] transition-colors"
+          className="relative w-14 h-8 rounded-full bg-[#034f46] transition-colors"
         >
           <span
             className={`absolute top-1 left-1 w-6 h-6 rounded-full bg-white shadow transition-transform duration-200 ${
@@ -99,7 +99,7 @@ export default function PricingTables() {
           />
         </button>
         <span
-          className={`text-sm font-medium ${annual ? "text-[#00174c]" : "text-[#727687]"}`}
+          className={`text-sm font-medium ${annual ? "text-[#1a1a1a]" : "text-[#6b7280]"}`}
         >
           Annual
           <span className="ml-2 inline-block bg-[#D6F5E3] text-[#1A7A44] text-xs px-2 py-0.5 rounded-full font-medium">
@@ -115,21 +115,21 @@ export default function PricingTables() {
             key={plan.name}
             className={`rounded-[32px] p-8 flex flex-col border backdrop-blur-md ${
               plan.popular
-                ? "bg-[#172d65]/80 text-white border-white/15 shadow-2xl shadow-[#172d65]/30 md:-mt-4 md:mb-0"
-                : "bg-white/55 text-[#00174c] border-white/60 shadow-xl shadow-[#0053ce]/5"
+                ? "bg-[#023d35]/80 text-white border-white/15 shadow-2xl shadow-[#023d35]/30 md:-mt-4 md:mb-0"
+                : "bg-white/55 text-[#1a1a1a] border-white/60 shadow-xl shadow-[#034f46]/5"
             }`}
           >
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-xl font-semibold">{plan.name}</h3>
               {plan.popular && (
-                <span className="text-xs bg-[#94a6fe] text-[#243889] px-3 py-1 rounded-full font-medium">
+                <span className="text-xs bg-[#8fc7b8] text-[#023d35] px-3 py-1 rounded-full font-medium">
                   Most popular
                 </span>
               )}
             </div>
             <p
               className={`text-sm leading-relaxed mb-6 ${
-                plan.popular ? "text-[#dbe1ff]/70" : "text-[#727687]"
+                plan.popular ? "text-[#e0e8e5]/70" : "text-[#6b7280]"
               }`}
             >
               {plan.tagline}
@@ -140,13 +140,13 @@ export default function PricingTables() {
                 ${annual ? plan.annual : plan.monthly}
               </span>
               <span
-                className={`text-sm mb-2 ${plan.popular ? "text-[#dbe1ff]/70" : "text-[#727687]"}`}
+                className={`text-sm mb-2 ${plan.popular ? "text-[#e0e8e5]/70" : "text-[#6b7280]"}`}
               >
                 /mo
               </span>
             </div>
             <p
-              className={`text-xs mb-6 ${plan.popular ? "text-[#dbe1ff]/60" : "text-[#727687]"}`}
+              className={`text-xs mb-6 ${plan.popular ? "text-[#e0e8e5]/60" : "text-[#6b7280]"}`}
             >
               {annual ? "billed annually" : "billed monthly"} · {plan.highlight}
             </p>
@@ -155,8 +155,8 @@ export default function PricingTables() {
               href="https://app.aceglobal.ai/"
               className={`block text-center w-full py-3.5 rounded-full font-medium text-sm transition-all mb-8 ${
                 plan.popular
-                  ? "bg-white text-[#172d65] hover:bg-[#f2f3ff]"
-                  : "bg-[#0053ce] text-white hover:bg-[#0053ce]/90 shadow-lg shadow-[#0053ce]/20"
+                  ? "bg-white text-[#023d35] hover:bg-[#eef3f1]"
+                  : "bg-[#034f46] text-white hover:bg-[#034f46]/90 shadow-lg shadow-[#034f46]/20"
               }`}
             >
               Get started
@@ -167,7 +167,7 @@ export default function PricingTables() {
                 <li key={f} className="flex items-start gap-3">
                   <Check />
                   <span
-                    className={`text-sm ${plan.popular ? "text-[#dbe1ff]" : "text-[#424655]"}`}
+                    className={`text-sm ${plan.popular ? "text-[#e0e8e5]" : "text-[#374151]"}`}
                   >
                     {f}
                   </span>
@@ -179,15 +179,15 @@ export default function PricingTables() {
       </div>
 
       {/* Enterprise strip */}
-      <div className="mt-6 bg-white/45 backdrop-blur-md border border-white/60 rounded-[32px] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg shadow-[#0053ce]/5">
+      <div className="mt-6 bg-white/45 backdrop-blur-md border border-white/60 rounded-[32px] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg shadow-[#034f46]/5">
         <div>
-          <h3 className="text-xl font-semibold text-[#00174c] mb-1">Need something custom?</h3>
-          <p className="text-[#727687] text-sm leading-relaxed max-w-xl">
+          <h3 className="text-xl font-semibold text-[#1a1a1a] mb-1">Need something custom?</h3>
+          <p className="text-[#6b7280] text-sm leading-relaxed max-w-xl">
             Multiple entities, international filings, or high transaction volume? We&apos;ll build a
             plan around your business.
           </p>
         </div>
-        <button className="shrink-0 bg-white border border-[#c2c6d8]/40 text-[#0053ce] px-8 py-3.5 rounded-full font-medium text-sm hover:bg-white/60 transition-colors">
+        <button className="shrink-0 bg-white border border-[#e0e0e0]/40 text-[#034f46] px-8 py-3.5 rounded-full font-medium text-sm hover:bg-white/60 transition-colors">
           Talk to sales
         </button>
       </div>

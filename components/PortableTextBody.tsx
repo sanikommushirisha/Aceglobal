@@ -31,14 +31,14 @@ const makeComponents = (ids: Map<string, string>): PortableTextComponents => {
   return {
   block: {
     normal: ({ children }) => (
-      <p className="text-[#424655] text-base md:text-lg leading-relaxed mb-6">
+      <p className="text-[#374151] text-base md:text-lg leading-relaxed mb-6">
         {children}
       </p>
     ),
     h2: ({ children, value }) => (
       <h2
         id={anchor(value)}
-        className="scroll-mt-28 text-[26px] md:text-[34px] font-medium text-[#00174c] leading-[1.2] mt-12 mb-4"
+        className="scroll-mt-28 text-[26px] md:text-[34px] font-medium text-[#1a1a1a] leading-[1.2] mt-12 mb-4"
       >
         {children}
       </h2>
@@ -46,7 +46,7 @@ const makeComponents = (ids: Map<string, string>): PortableTextComponents => {
     h3: ({ children, value }) => (
       <h3
         id={anchor(value)}
-        className="scroll-mt-28 text-xl md:text-2xl font-medium text-[#00174c] mt-10 mb-3"
+        className="scroll-mt-28 text-xl md:text-2xl font-medium text-[#1a1a1a] mt-10 mb-3"
       >
         {children}
       </h3>
@@ -54,36 +54,36 @@ const makeComponents = (ids: Map<string, string>): PortableTextComponents => {
     h4: ({ children, value }) => (
       <h4
         id={anchor(value)}
-        className="scroll-mt-28 text-lg font-semibold text-[#00174c] mt-8 mb-2"
+        className="scroll-mt-28 text-lg font-semibold text-[#1a1a1a] mt-8 mb-2"
       >
         {children}
       </h4>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-[#0053ce] pl-5 my-8 italic text-lg text-[#424655]">
+      <blockquote className="border-l-4 border-[#034f46] pl-5 my-8 italic text-lg text-[#374151]">
         {children}
       </blockquote>
     ),
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc pl-6 mb-6 space-y-2 text-[#424655] text-base md:text-lg">
+      <ul className="list-disc pl-6 mb-6 space-y-2 text-[#374151] text-base md:text-lg">
         {children}
       </ul>
     ),
     number: ({ children }) => (
-      <ol className="list-decimal pl-6 mb-6 space-y-2 text-[#424655] text-base md:text-lg">
+      <ol className="list-decimal pl-6 mb-6 space-y-2 text-[#374151] text-base md:text-lg">
         {children}
       </ol>
     ),
   },
   marks: {
     strong: ({ children }) => (
-      <strong className="font-semibold text-[#00174c]">{children}</strong>
+      <strong className="font-semibold text-[#1a1a1a]">{children}</strong>
     ),
     em: ({ children }) => <em className="italic">{children}</em>,
     code: ({ children }) => (
-      <code className="bg-[#f2f3ff] text-[#0053ce] rounded px-1.5 py-0.5 text-[0.9em]">
+      <code className="bg-[#eef3f1] text-[#034f46] rounded px-1.5 py-0.5 text-[0.9em]">
         {children}
       </code>
     ),
@@ -95,14 +95,14 @@ const makeComponents = (ids: Map<string, string>): PortableTextComponents => {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#0053ce] underline underline-offset-2 hover:opacity-80"
+          className="text-[#034f46] underline underline-offset-2 hover:opacity-80"
         >
           {children}
         </a>
       ) : (
         <Link
           href={href}
-          className="text-[#0053ce] underline underline-offset-2 hover:opacity-80"
+          className="text-[#034f46] underline underline-offset-2 hover:opacity-80"
         >
           {children}
         </Link>
@@ -122,16 +122,18 @@ const makeComponents = (ids: Map<string, string>): PortableTextComponents => {
       const dims = imageDimensions(value) ?? { width: 1600, height: 900 };
       return (
         <figure className="my-8">
-          <Image
-            src={url}
-            alt={value.alt || ""}
-            width={dims.width}
-            height={dims.height}
-            sizes="(max-width: 768px) 100vw, 720px"
-            className="w-full h-auto rounded-2xl border border-[#c2c6d8]/20"
-          />
+          <div className="rounded-2xl overflow-hidden border border-[#e0e0e0]/20">
+            <Image
+              src={url}
+              alt={value.alt || ""}
+              width={dims.width}
+              height={dims.height}
+              sizes="(max-width: 768px) 100vw, 720px"
+              className="block w-full h-auto"
+            />
+          </div>
           {value.alt ? (
-            <figcaption className="text-sm text-[#727687] mt-2 text-center">
+            <figcaption className="text-sm text-[#6b7280] mt-2 text-center">
               {value.alt}
             </figcaption>
           ) : null}
@@ -254,7 +256,7 @@ export default function PortableTextBody({ value }: { value: unknown }) {
               />
             ) : null}
             {seg.items.length > 0 ? (
-              <div className="border-t border-[#c2c6d8]/30">
+              <div className="border-t border-[#e0e0e0]/30">
                 {seg.items.map((item, j) => (
                   <FaqAccordionItem
                     key={`${item.question}-${j}`}
