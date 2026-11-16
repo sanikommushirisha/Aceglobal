@@ -3,7 +3,7 @@
 | Branch | Goes to | How |
 |---|---|---|
 | `deploy-staging` | https://website.aceglobal.ai | automatically on push; `noindex` |
-| `production` | https://aceglobal.ai | on push, after a reviewer presses **Approve** in GitHub Actions |
+| `production` | https://aceglobal.ai | push runs checks + build only. Go live with **Actions → Deploy → Run workflow → branch `production`** (that click is the approval) |
 
 `main` is not deployed here (Vercel still builds it, and is the DNS rollback target).
 
@@ -33,8 +33,8 @@ nginx: `/etc/nginx/conf.d/aceglobal-website.conf`. `aceglobal.ai` → 3002,
 
 ## Deploy keys
 
-One SSH key per environment, stored as the `DEPLOY_SSH_KEY` **environment** secret
-(not a repository secret, so only a job that passed that environment's rules can read it).
+One SSH key per target, stored as repository secrets `DEPLOY_SSH_KEY_STAGING` and
+`DEPLOY_SSH_KEY_PRODUCTION` (Settings → Secrets and variables → Actions).
 On the server each key is locked to the gate in `~/.ssh/authorized_keys`:
 
 ```
@@ -45,14 +45,17 @@ restrict,command="/home/ec2-user/bin/website-deploy-gate.sh production" ssh-ed25
 The key can only run `release <its env> <sha>`: no shell, no port forwarding, and a
 staging key cannot release production.
 
-## GitHub settings (once)
+## Limits of this setup, and the upgrade
 
-Settings → Environments:
-- `staging`: deployment branches = `deploy-staging`; secret `DEPLOY_SSH_KEY`.
-- `production`: **Required reviewers** = whoever approves go-live; deployment branches =
-  `production`; secret `DEPLOY_SSH_KEY`.
+Repository secrets are readable by any workflow a user with Write access pushes, so the
+"Run workflow" click is a convention, not an enforced gate: someone with Write could
+release production from a workflow of their own. (They could also push code to
+`production`, so this does not widen Write access by much.)
 
-Recommended: Settings → Branches → protect `production` (no force push, no delete).
+With repo Admin, upgrade to an enforced approval: create Environments `staging`
+(branch `deploy-staging`) and `production` (branch `production`, **Required reviewers**),
+move each key into its environment as `DEPLOY_SSH_KEY`, add `environment:` to the
+deploy job, and delete the repository secrets. Also protect the `production` branch.
 
 ## Rollback
 

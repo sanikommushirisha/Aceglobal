@@ -3,8 +3,9 @@ name: Deploy
 # Marketing website → EC2 (32.194.116.41), nginx → pm2 → Next.js standalone.
 #
 #   push to `deploy-staging` → https://website.aceglobal.ai   (automatic, noindex)
-#   push to `production`     → https://aceglobal.ai           (waits for a reviewer
-#                                                               to press Approve)
+#   push to `production`     → checks + build only; nothing goes live
+#   Actions → Deploy → "Run workflow" on `production`
+#                            → https://aceglobal.ai  (this click is the approval)
 #
 # The build runs here on GitHub, never on the server, so it cannot starve the
 # live app.aceglobal.ai that shares the box. The server only unpacks, smoke-tests
@@ -14,6 +15,7 @@ name: Deploy
 on:
   push:
     branches: [deploy-staging, production]
+  workflow_dispatch:
 
 concurrency:
   group: deploy-${{ github.ref_name }}
@@ -36,19 +38,35 @@ jobs:
     outputs:
       target: ${{ steps.target.outputs.target }}
       url: ${{ steps.target.outputs.url }}
+      deploy: ${{ steps.target.outputs.deploy }}
     steps:
       - name: Pick target
         id: target
         run: |
-          if [ "$GITHUB_REF_NAME" = "production" ]; then
-            echo "target=production" >> "$GITHUB_OUTPUT"
-            echo "url=https://aceglobal.ai" >> "$GITHUB_OUTPUT"
-            echo "SITE_ENV=production" >> "$GITHUB_ENV"
-          else
-            echo "target=staging" >> "$GITHUB_OUTPUT"
-            echo "url=https://website.aceglobal.ai" >> "$GITHUB_OUTPUT"
-            echo "SITE_ENV=preview" >> "$GITHUB_ENV"
-          fi
+          case "$GITHUB_REF_NAME" in
+            production)
+              echo "target=production" >> "$GITHUB_OUTPUT"
+              echo "url=https://aceglobal.ai" >> "$GITHUB_OUTPUT"
+              echo "SITE_ENV=production" >> "$GITHUB_ENV"
+              # Live only from the manual "Run workflow" click, never from a bare push.
+              if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+                echo "deploy=true" >> "$GITHUB_OUTPUT"
+              else
+                echo "deploy=false" >> "$GITHUB_OUTPUT"
+                echo "::notice::Build OK. To go live: Actions → Deploy → Run workflow → branch 'production'."
+              fi
+              ;;
+            deploy-staging)
+              echo "target=staging" >> "$GITHUB_OUTPUT"
+              echo "url=https://website.aceglobal.ai" >> "$GITHUB_OUTPUT"
+              echo "SITE_ENV=preview" >> "$GITHUB_ENV"
+              echo "deploy=true" >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo "::error::Deploy runs only on 'deploy-staging' or 'production', not '$GITHUB_REF_NAME'."
+              exit 1
+              ;;
+          esac
 
       - uses: actions/checkout@v4
 
@@ -88,12 +106,9 @@ jobs:
   deploy:
     name: Deploy to ${{ needs.build.outputs.target }}
     needs: build
+    if: needs.build.outputs.deploy == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 15
-    # `production` has a required reviewer, so this job waits for Approve.
-    environment:
-      name: ${{ needs.build.outputs.target }}
-      url: ${{ needs.build.outputs.url }}
     steps:
       - uses: actions/download-artifact@v4
         with:
@@ -101,9 +116,10 @@ jobs:
 
       - name: Set up SSH
         env:
-          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          # One key per target; on the server each is locked to its own target.
+          DEPLOY_SSH_KEY: ${{ needs.build.outputs.target == 'production' && secrets.DEPLOY_SSH_KEY_PRODUCTION || secrets.DEPLOY_SSH_KEY_STAGING }}
         run: |
-          test -n "$DEPLOY_SSH_KEY" || { echo "::error::DEPLOY_SSH_KEY is not set on the '${{ needs.build.outputs.target }}' environment"; exit 1; }
+          test -n "$DEPLOY_SSH_KEY" || { echo "::error::Repository secret DEPLOY_SSH_KEY_${{ needs.build.outputs.target == 'production' && 'PRODUCTION' || 'STAGING' }} is not set"; exit 1; }
           install -m 700 -d ~/.ssh
           printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
