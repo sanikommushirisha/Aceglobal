@@ -1,0 +1,148 @@
+name: Deploy
+
+# Marketing website → EC2 (32.194.116.41), nginx → pm2 → Next.js standalone.
+#
+#   push to `deploy-staging` → https://website.aceglobal.ai   (automatic, noindex)
+#   push to `production`     → checks + build only; nothing goes live
+#   Actions → Deploy → "Run workflow" on `production`
+#                            → https://aceglobal.ai  (this click is the approval)
+#
+# The build runs here on GitHub, never on the server, so it cannot starve the
+# live app.aceglobal.ai that shares the box. The server only unpacks, smoke-tests
+# the new build on a spare port, and switches; a build that fails its checks
+# never takes traffic. Server side: deploy/README.md.
+
+on:
+  push:
+    branches: [deploy-staging, production]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref_name }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: "22"
+  DEPLOY_HOST: 32.194.116.41
+  # The server's SSH host key (public), so the runner refuses a look-alike host.
+  DEPLOY_KNOWN_HOST: "32.194.116.41 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKyfFcX+MWOyUMg2U1WOF7LMQG9u03z6Tph7hQV7ZpVv"
+
+jobs:
+  build:
+    name: Type-check & build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    outputs:
+      target: ${{ steps.target.outputs.target }}
+      url: ${{ steps.target.outputs.url }}
+      deploy: ${{ steps.target.outputs.deploy }}
+    steps:
+      - name: Pick target
+        id: target
+        run: |
+          case "$GITHUB_REF_NAME" in
+            production)
+              echo "target=production" >> "$GITHUB_OUTPUT"
+              echo "url=https://aceglobal.ai" >> "$GITHUB_OUTPUT"
+              echo "SITE_ENV=production" >> "$GITHUB_ENV"
+              # Live only from the manual "Run workflow" click, never from a bare push.
+              if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+                echo "deploy=true" >> "$GITHUB_OUTPUT"
+              else
+                echo "deploy=false" >> "$GITHUB_OUTPUT"
+                echo "::notice::Build OK. To go live: Actions → Deploy → Run workflow → branch 'production'."
+              fi
+              ;;
+            deploy-staging)
+              echo "target=staging" >> "$GITHUB_OUTPUT"
+              echo "url=https://website.aceglobal.ai" >> "$GITHUB_OUTPUT"
+              echo "SITE_ENV=preview" >> "$GITHUB_ENV"
+              echo "deploy=true" >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo "::error::Deploy runs only on 'deploy-staging' or 'production', not '$GITHUB_REF_NAME'."
+              exit 1
+              ;;
+          esac
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - run: npm ci
+
+      - name: Type-check
+        run: npm run typecheck
+
+      # Public values only. Secrets (DB, Resend) live in the server's
+      # shared/.env.local and are read at runtime.
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+          NEXT_PUBLIC_SANITY_PROJECT_ID: eiuo7osi
+          NEXT_PUBLIC_SANITY_DATASET: production
+          NEXT_PUBLIC_SANITY_API_VERSION: "2024-10-01"
+
+      - name: Package standalone build
+        run: |
+          cp -r public .next/standalone/
+          cp -r .next/static .next/standalone/.next/
+          tar -czf site.tgz -C .next/standalone .
+          ls -lh site.tgz
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site-${{ github.sha }}
+          path: site.tgz
+          retention-days: 7
+
+  deploy:
+    name: Deploy to ${{ needs.build.outputs.target }}
+    needs: build
+    if: needs.build.outputs.deploy == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: site-${{ github.sha }}
+
+      - name: Set up SSH
+        env:
+          # One key per target; on the server each is locked to its own target.
+          DEPLOY_SSH_KEY: ${{ needs.build.outputs.target == 'production' && secrets.DEPLOY_SSH_KEY_PRODUCTION || secrets.DEPLOY_SSH_KEY_STAGING }}
+        run: |
+          test -n "$DEPLOY_SSH_KEY" || { echo "::error::Repository secret DEPLOY_SSH_KEY_${{ needs.build.outputs.target == 'production' && 'PRODUCTION' || 'STAGING' }} is not set"; exit 1; }
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$DEPLOY_KNOWN_HOST" > ~/.ssh/known_hosts
+
+      # The key is locked to deploy/gate.sh on the server: it can only run
+      # "release <its env> <sha>", with the tarball on stdin.
+      - name: Release on the server
+        run: |
+          ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
+            -o ConnectTimeout=20 -o ServerAliveInterval=15 \
+            "ec2-user@$DEPLOY_HOST" "release ${{ needs.build.outputs.target }} $GITHUB_SHA" < site.tgz
+
+      - name: Smoke test ${{ needs.build.outputs.url }}
+        env:
+          URL: ${{ needs.build.outputs.url }}
+        run: |
+          for path in / /pricing /blog /robots.txt; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 --retry 3 --retry-delay 5 "$URL$path")
+            echo "$path -> $code"
+            [ "$code" = "200" ] || exit 1
+          done
+
+      - name: Remove key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
