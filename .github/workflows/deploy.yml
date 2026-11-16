@@ -1,0 +1,132 @@
+name: Deploy
+
+# Marketing website → EC2 (32.194.116.41), nginx → pm2 → Next.js standalone.
+#
+#   push to `deploy-staging` → https://website.aceglobal.ai   (automatic, noindex)
+#   push to `production`     → https://aceglobal.ai           (waits for a reviewer
+#                                                               to press Approve)
+#
+# The build runs here on GitHub, never on the server, so it cannot starve the
+# live app.aceglobal.ai that shares the box. The server only unpacks, smoke-tests
+# the new build on a spare port, and switches; a build that fails its checks
+# never takes traffic. Server side: deploy/README.md.
+
+on:
+  push:
+    branches: [deploy-staging, production]
+
+concurrency:
+  group: deploy-${{ github.ref_name }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: "22"
+  DEPLOY_HOST: 32.194.116.41
+  # The server's SSH host key (public), so the runner refuses a look-alike host.
+  DEPLOY_KNOWN_HOST: "32.194.116.41 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKyfFcX+MWOyUMg2U1WOF7LMQG9u03z6Tph7hQV7ZpVv"
+
+jobs:
+  build:
+    name: Type-check & build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    outputs:
+      target: ${{ steps.target.outputs.target }}
+      url: ${{ steps.target.outputs.url }}
+    steps:
+      - name: Pick target
+        id: target
+        run: |
+          if [ "$GITHUB_REF_NAME" = "production" ]; then
+            echo "target=production" >> "$GITHUB_OUTPUT"
+            echo "url=https://aceglobal.ai" >> "$GITHUB_OUTPUT"
+            echo "SITE_ENV=production" >> "$GITHUB_ENV"
+          else
+            echo "target=staging" >> "$GITHUB_OUTPUT"
+            echo "url=https://website.aceglobal.ai" >> "$GITHUB_OUTPUT"
+            echo "SITE_ENV=preview" >> "$GITHUB_ENV"
+          fi
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - run: npm ci
+
+      - name: Type-check
+        run: npm run typecheck
+
+      # Public values only. Secrets (DB, Resend) live in the server's
+      # shared/.env.local and are read at runtime.
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+          NEXT_PUBLIC_SANITY_PROJECT_ID: eiuo7osi
+          NEXT_PUBLIC_SANITY_DATASET: production
+          NEXT_PUBLIC_SANITY_API_VERSION: "2024-10-01"
+
+      - name: Package standalone build
+        run: |
+          cp -r public .next/standalone/
+          cp -r .next/static .next/standalone/.next/
+          tar -czf site.tgz -C .next/standalone .
+          ls -lh site.tgz
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site-${{ github.sha }}
+          path: site.tgz
+          retention-days: 7
+
+  deploy:
+    name: Deploy to ${{ needs.build.outputs.target }}
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    # `production` has a required reviewer, so this job waits for Approve.
+    environment:
+      name: ${{ needs.build.outputs.target }}
+      url: ${{ needs.build.outputs.url }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: site-${{ github.sha }}
+
+      - name: Set up SSH
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+        run: |
+          test -n "$DEPLOY_SSH_KEY" || { echo "::error::DEPLOY_SSH_KEY is not set on the '${{ needs.build.outputs.target }}' environment"; exit 1; }
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$DEPLOY_KNOWN_HOST" > ~/.ssh/known_hosts
+
+      # The key is locked to deploy/gate.sh on the server: it can only run
+      # "release <its env> <sha>", with the tarball on stdin.
+      - name: Release on the server
+        run: |
+          ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
+            -o ConnectTimeout=20 -o ServerAliveInterval=15 \
+            "ec2-user@$DEPLOY_HOST" "release ${{ needs.build.outputs.target }} $GITHUB_SHA" < site.tgz
+
+      - name: Smoke test ${{ needs.build.outputs.url }}
+        env:
+          URL: ${{ needs.build.outputs.url }}
+        run: |
+          for path in / /pricing /blog /robots.txt; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 --retry 3 --retry-delay 5 "$URL$path")
+            echo "$path -> $code"
+            [ "$code" = "200" ] || exit 1
+          done
+
+      - name: Remove key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
