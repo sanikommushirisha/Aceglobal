@@ -1,6 +1,6 @@
 "use server";
 
-import { createClient } from "@supabase/supabase-js";
+import { getSql } from "@/lib/db";
 import { sendConfirmationEmail } from "@/lib/newsletter";
 
 export type LeadResult = { ok: boolean; error?: string };
@@ -8,9 +8,9 @@ export type LeadResult = { ok: boolean; error?: string };
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
 /**
- * Captures a website lead (footer newsletter / contact box) into the Ace Global
- * admin `leads` table via Supabase. Inserts run as the anonymous role, which is
- * allowed insert-only by the RLS policy in the admin's schema.sql.
+ * Captures a website lead (footer newsletter / contact box) into the `leads`
+ * table in Postgres (DATABASE_URL). The website only ever inserts here; reading
+ * and managing leads happens outside the site.
  */
 export async function submitLead(
   _prev: LeadResult,
@@ -38,22 +38,18 @@ export async function submitLead(
     String(formData.get("name") ?? "").trim() ||
     (service === "newsletter" ? "Newsletter subscriber" : email);
 
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) {
+  const sql = getSql();
+  if (!sql) {
     return { ok: false, error: "Sign-ups are temporarily unavailable." };
   }
 
-  const supabase = createClient(url, key);
-  const { error } = await supabase.from("leads").insert({
-    name,
-    email,
-    source: "website",
-    service,
-    status: "new",
-  });
-
-  if (error) {
+  try {
+    await sql`
+      insert into leads (name, email, source, service, status)
+      values (${name}, ${email}, 'website', ${service}, 'new')
+    `;
+  } catch (e) {
+    console.error(`[leads] insert failed: ${(e as Error)?.message ?? e}`);
     return { ok: false, error: "Something went wrong. Please try again." };
   }
 
